@@ -25,7 +25,10 @@ const serveFile = (filePath, res) => {
 const server = http.createServer((req, res) => {
     let filePath = path.join(__dirname, req.url === '/' ? 'index.html' : req.url);
     // prevent directory traversal
-    if (filePath.startsWith(path.join(__dirname, '..'))) {
+    console.log('Requested:', req.url);
+    console.log('FilePath:', filePath);
+    const absolutePath = path.resolve(filePath);
+    if (!absolutePath.startsWith(path.resolve(__dirname))) {
         res.writeHead(403);
         return res.end('Forbidden');
     }
