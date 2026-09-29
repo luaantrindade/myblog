@@ -3,22 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Luan Trindade – Support Engineer & AI Enthusiast</title>
-    <link rel="stylesheet" href="/style.css">
+    <title>Luan Trindade - Support Engineer & AI Enthusiast</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header class="hero">
         <div class="container">
-            <h1>Hi, I'm Luan Trindade</h1>
+            <h1>Luan Trindade</h1>
             <p class="tagline">Support Engineer • AI Enthusiast</p>
-            <a href="#portfolio" class="btn">See My Work</a>
         </div>
     </header>
+
+    <nav class="navbar">
+        <div class="container">
+            <a href="#about">About</a>
+            <a href="#portfolio">Portfolio</a>
+            <a href="#blog">Blog</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
 
     <section id="about" class="section about">
         <div class="container">
             <h2>About Me</h2>
-            <p>I specialize in technical support, troubleshooting, and optimizing AI-driven workflows. Passionate about leveraging AI to improve productivity and solve real‑world problems.</p>
+            <p>I am a Support Engineer with a passion for artificial intelligence. I enjoy solving technical problems, exploring AI tools, and sharing knowledge through writing.</p>
         </div>
     </section>
 
@@ -27,16 +35,16 @@
             <h2>Portfolio</h2>
             <div class="grid">
                 <div class="card">
-                    <h3>AI Support Bot</h3>
-                    <p>Automated ticket triage and response suggestions using LLMs.</p>
+                    <h3>AI-Powered Support Bot</h3>
+                    <p>Built a chatbot that automates ticket triage using NLP.</p>
                 </div>
                 <div class="card">
-                    <h3>Knowledge Base</h3>
-                    <p>Searchable internal wiki with AI‑enhanced tagging.</p>
+                    <h3>Network Monitoring Dashboard</h3>
+                    <p>Real‑time visualization of server health and latency.</p>
                 </div>
                 <div class="card">
-                    <h3>Monitoring Dashboard</h3>
-                    <p>Real‑time metrics for service health and performance.</p>
+                    <h3>Personal Knowledge Base</h3>
+                    <p>AI‑enhanced search over internal documentation.</p>
                 </div>
             </div>
         </div>
@@ -44,23 +52,17 @@
 
     <section id="blog" class="section blog">
         <div class="container">
-            <h2>Latest Articles</h2>
+            <h2>Blog</h2>
             <div class="posts">
-                <!-- Placeholder posts – Hermes will generate real ones -->
+                <!-- Blog posts will be inserted here via JS or server-side; for now placeholder -->
                 <article class="post">
-                    <h3>Getting Started with AI‑Assisted Support</h3>
+                    <h3>Getting Started with AI in Support</h3>
                     <p class="meta">Sep 28, 2026</p>
-                    <p>Learn how LLMs can reduce ticket resolution time by 30%.</p>
-                    <a href="/posts/getting-started-ai-support.html" class="read-more">Read more</a>
-                </article>
-                <article class="post">
-                    <h3>Best Practices for Prompt Engineering</h3>
-                    <p class="meta">Sep 20, 2026</p>
-                    <p>Tips for crafting effective prompts for LLMs.</p>
-                    <a href="/posts/prompt-engineering-best-practices.html" class="read-more">Read more</a>
+                    <p>Learn how AI can reduce ticket resolution time and improve customer satisfaction.</p>
+                    <a href="#" class="read-more">Read more</a>
                 </article>
             </div>
-            <a href="/archive.html" class="btn">View All Posts</a>
+            <a href="#new-post" class="btn-primary">Write New Post</a>
         </div>
     </section>
 
@@ -69,5 +71,13 @@
             <p>&copy; 2026 Luan Trindade. All rights reserved.</p>
         </div>
     </footer>
+
+    <script>
+        // Simple client-side route for new post form (placeholder)
+        document.querySelector('.btn-primary').addEventListener('click', function(e){
+            e.preventDefault();
+            alert('Blog posting interface would open here. In a full setup, this would open an editor.');
+        });
+    </script>
 </body>
 </html>
