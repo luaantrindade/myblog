@@ -3,129 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Luan Trindade | Support Engineer & AI Enthusiast</title>
+    <title>Luan Trindade – Support Engineer & AI Enthusiast</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Header -->
-    <header class="header">
-        <div class="container">
-            <h1 class="logo">Luan Trindade</h1>
-            <nav class="nav">
-                <a href="#about" class="nav-link">About</a>
-                <a href="#portfolio" class="nav-link">Portfolio</a>
-                <a href="#blog" class="nav-link">Blog</a>
-                <a href="#contact" class="nav-link">Contact</a>
-            </nav>
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Luan Trindade</h1>
+            <p class="tagline">Support Engineer • AI Enthusiast</p>
+            <a href="#blog" class="btn-primary">Read Blog</a>
         </div>
     </header>
 
-    <!-- Hero -->
-    <section class="hero">
-        <div class="container">
-            <h2 class="hero-title">Support Engineer & AI Enthusiast</h2>
-            <p class="hero-subtitle">Building reliable systems and exploring intelligent solutions.</p>
-            <a href="#about" class="btn btn-primary">Learn More</a>
+    <section id="about" class="section">
+        <h2>About Me</h2>
+        <div class="about-content">
+            <p>I specialize in keeping systems running smoothly while exploring the frontier of AI technologies. Passionate about turning complex problems into simple, reliable solutions.</p>
+            <ul class="skills">
+                <li>Linux Systems</li>
+                <li>Networking</li>
+                <li>AI/ML Ops</li>
+                <li>Automation</li>
+                <li>Cloud Infrastructure</li>
+            </ul>
         </div>
     </section>
 
-    <!-- About -->
-    <section id="about" class="section about">
-        <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <div class="about-content">
-                <p>I am a dedicated Support Engineer with a passion for artificial intelligence. I specialize in troubleshooting complex issues, optimizing performance, and ensuring seamless user experiences. My AI enthusiasm drives me to experiment with machine learning models, automation, and intelligent workflows.</p>
-                <p>When I'm not solving technical challenges, I'm reading about the latest AI research, contributing to open‑source projects, or sharing insights on this blog.</p>
+    <section id="portfolio" class="section bg-light">
+        <h2>Featured Projects</h2>
+        <div class="projects-grid">
+            <article class="project-card">
+                <h3>AI‑Powered Log Analyzer</h3>
+                <p>Automated anomaly detection for support tickets using LLMs.</p>
+                <a href="#" class="btn-link">Learn More</a>
+            </article>
+            <article class="project-card">
+                <h3>Self‑Healing Kubernetes Operator</h3>
+                <p>Detects and remediates node failures without manual intervention.</p>
+                <a href="#" class="btn-link">Learn More</a>
+            </article>
+            <article class="project-card">
+                <h3>Personal Knowledge Base</h3>
+                <p>Markdown‑driven site with AI‑generated summaries.</p>
+                <a href="#" class="btn-link">Learn More</a>
+            </article>
+        </div>
+    </section>
+
+    <section id="blog" class="section">
+        <h2>Latest Articles</h2>
+        <div class="posts-preview">
+            <!-- Placeholder for latest posts -->
+            <div class="post-preview">
+                <h3>Getting Started with LLMs in Production</h3>
+                <p class="meta">Sep 28, 2026 • 5 min read</p>
+                <p>A practical guide to deploying large language models safely and efficiently.</p>
+                <a href="posts/llm-production.html" class="btn-link">Read More</a>
+            </div>
+            <div class="post-preview">
+                <h3>Monitoring AI Workloads with Prometheus</h3>
+                <p class="meta">Sep 20, 2026 • 4 min read</p>
+                <p>Key metrics and alerts to keep your AI pipelines healthy.</p>
+                <a href="posts/ai-monitoring.html" class="btn-link">Read More</a>
             </div>
         </div>
+        <a href="posts/" class="btn-primary">View All Posts</a>
     </section>
 
-    <!-- Portfolio -->
-    <section id="portfolio" class="section portfolio">
-        <div class="container">
-            <h2 class="section-title">Portfolio</h2>
-            <div class="portfolio-grid">
-                <div class="portfolio-item">
-                    <h3>AI‑Powered Support Bot</h3>
-                    <p>Developed a conversational bot that reduces ticket resolution time by 30% using NLP and knowledge‑base integration.</p>
-                    <a href="#" class="btn btn-outline">View Details</a>
-                </div>
-                <div class="portfolio-item">
-                    <h3>System Monitoring Dashboard</h3>
-                    <p>Created a real‑time dashboard with Grafana and Prometheus to track service health and alert on anomalies.</p>
-                    <a href="#" class="btn btn-outline">View Details</a>
-                </div>
-                <div class="portfolio-item">
-                    <h3>Automated Incident Response</h3>
-                    <p>Built automation scripts that auto‑remediate common infrastructure issues, cutting downtime by 40%.</p>
-                    <a href="#" class="btn btn-outline">View Details</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Blog Preview -->
-    <section id="blog" class="section blog">
-        <div class="container">
-            <h2 class="section-title">Latest Articles</h2>
-            <div class="blog-grid">
-                <!-- Article 1 -->
-                <article class="blog-card">
-                    <h3>How to Optimize Linux Server Performance</h3>
-                    <p class="blog-meta">Sep 20, 2026 &middot; 5 min read</p>
-                    <p>Practical tips for tuning kernel parameters, I/O schedulers, and memory usage to get the most out of your servers.</p>
-                    <a href="/posts/linux-optimization.html" class="btn btn-sm">Read More</a>
-                </article>
-                <!-- Article 2 -->
-                <article class="blog-card">
-                    <h3>Introduction to Prompt Engineering for LLMs</h3>
-                    <p class="blog-meta">Sep 15, 2026 &middot; 7 min read</p>
-                    <p>Learn the basics of crafting effective prompts to get better responses from large language models.</p>
-                    <a href="/posts/prompt-engineering.html" class="btn btn-sm">Read More</a>
-                </article>
-                <!-- Article 3 -->
-                <article class="blog-card">
-                    <h3>Setting Up CI/CD for Node.js Applications</h3>
-                    <p class="blog-meta">Sep 10, 2026 &middot; 6 min read</p>
-                    <p>Step‑by‑step guide to building a reliable CI/CD pipeline using GitHub Actions, Docker, and Kubernetes.</p>
-                    <a href="/posts/ci-cd-nodejs.html" class="btn btn-sm">Read More</a>
-                </article>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact -->
-    <section id="contact" class="section contact">
-        <div class="container">
-            <h2 class="section-title">Get In Touch</h2>
-            <p class="contact-text">Have a question, collaboration idea, or just want to say hello? Drop me a message.</p>
-            <a href="mailto:luantrindade@example.com" class="btn btn-primary">luantrindade@example.com</a>
-        </div>
-    </section>
-
-    <!-- Footer -->
     <footer class="footer">
-        <div class="container">
-            <p>&copy; 2026 Luan Trindade. All rights reserved.</p>
-        </div>
+        <p>&copy; 2026 Luan Trindade. All rights reserved.</p>
     </footer>
 
     <script>
-        // Simple scroll animation
-        const observerOptions = {
-            threshold: 0.1
-        };
+        // Simple animation on scroll
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.classList.add('animate-in');
+                    entry.target.classList.add('visible');
                 }
             });
-        }, observerOptions);
-        document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+        }, {threshold: 0.1});
+        document.querySelectorAll('.section, .project-card, .post-preview').forEach(el => {
+            observer.observe(el);
+            el.classList.add('hidden');
+        });
     </script>
 </body>
 </html>
