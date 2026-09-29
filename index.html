@@ -3,38 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Blog</title>
-    <style>
-        body {font-family: Arial, sans-serif; margin:0; padding:0; background:#f9f9f9; color:#333;}
-        header {background:#0066cc; color:#fff; padding:1rem; text-align:center;}
-        nav {background:#004c99; padding:0.5rem;}
-        nav a {color:#fff; margin:0 1rem; text-decoration:none;}
-        main {max-width:800px; margin:2rem auto; padding:0 1rem;}
-        .post {background:#fff; margin-bottom:2rem; padding:1.5rem; border-radius:8px; box-shadow:0 2px 5px rgba(0,0,0,0.1);}
-        .post h2 {color:#0066cc;}
-        .post .meta {font-size:0.9rem; color:#666;}
-        footer {text-align:center; padding:1rem; margin-top:2rem; color:#666;}
-    </style>
+    <title>Luan Trindade – Support Engineer & AI Enthusiast</title>
+    <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-    <header>
-        <h1>My Blog</h1>
-        <p>Sharing thoughts and ideas</p>
+    <header class="hero">
+        <div class="container">
+            <h1>Hi, I'm Luan Trindade</h1>
+            <p class="tagline">Support Engineer • AI Enthusiast</p>
+            <a href="#portfolio" class="btn">See My Work</a>
+        </div>
     </header>
-    <nav>
-        <a href="/">Home</a>
-        <a href="/about">About</a>
-        <a href="/contact">Contact</a>
-    </nav>
-    <main>
-        <section class="post">
-            <h2>Welcome to My Blog</h2>
-            <p class="meta">Posted on September 28, 2026</p>
-            <p>This is the first post. You can edit this content or add new posts by modifying the HTML files.</p>
-        </section>
-    </main>
+
+    <section id="about" class="section about">
+        <div class="container">
+            <h2>About Me</h2>
+            <p>I specialize in technical support, troubleshooting, and optimizing AI-driven workflows. Passionate about leveraging AI to improve productivity and solve real‑world problems.</p>
+        </div>
+    </section>
+
+    <section id="portfolio" class="section portfolio">
+        <div class="container">
+            <h2>Portfolio</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>AI Support Bot</h3>
+                    <p>Automated ticket triage and response suggestions using LLMs.</p>
+                </div>
+                <div class="card">
+                    <h3>Knowledge Base</h3>
+                    <p>Searchable internal wiki with AI‑enhanced tagging.</p>
+                </div>
+                <div class="card">
+                    <h3>Monitoring Dashboard</h3>
+                    <p>Real‑time metrics for service health and performance.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="blog" class="section blog">
+        <div class="container">
+            <h2>Latest Articles</h2>
+            <div class="posts">
+                <!-- Placeholder posts – Hermes will generate real ones -->
+                <article class="post">
+                    <h3>Getting Started with AI‑Assisted Support</h3>
+                    <p class="meta">Sep 28, 2026</p>
+                    <p>Learn how LLMs can reduce ticket resolution time by 30%.</p>
+                    <a href="/posts/getting-started-ai-support.html" class="read-more">Read more</a>
+                </article>
+                <article class="post">
+                    <h3>Best Practices for Prompt Engineering</h3>
+                    <p class="meta">Sep 20, 2026</p>
+                    <p>Tips for crafting effective prompts for LLMs.</p>
+                    <a href="/posts/prompt-engineering-best-practices.html" class="read-more">Read more</a>
+                </article>
+            </div>
+            <a href="/archive.html" class="btn">View All Posts</a>
+        </div>
+    </section>
+
     <footer>
-        &copy; 2026 My Blog. All rights reserved.
+        <div class="container">
+            <p>&copy; 2026 Luan Trindade. All rights reserved.</p>
+        </div>
     </footer>
 </body>
 </html>
