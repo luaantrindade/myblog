@@ -10,14 +10,6 @@
     <!-- Header -->
     <header>
         <div class="container">
-            <h1>Luan Trindade</h1>
-            <p>Support Engineer & AI Enthusiast</p>
-        </div>
-    </header>
-
-    <!-- Navigation -->
-    <nav>
-        <div class="container">
             <div class="logo">Luan Trindade</div>
             <button class="mobile-toggle" aria-label="Toggle menu">
                 <span></span><span></span><span></span>
@@ -29,14 +21,18 @@
                 <li><a href="#blog">Blog</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
+            <!-- Theme toggle -->
+            <button id="theme-toggle" aria-label="Toggle dark mode" class="btn btn-sm">
+                🌙
+            </button>
         </div>
-    </nav>
+    </header>
 
     <!-- Hero -->
     <section class="hero" id="home">
         <div class="container">
             <div class="hero-content">
-                <h2>AI‑Powered Support & Automation</h2>
+                <h1>AI‑Powered Support & Automation</h1>
                 <p>Turning complex support challenges into intelligent solutions with LLMs, NLP, and smart workflows.</p>
                 <div class="hero-buttons">
                     <a href="#about" class="btn">About Me</a>
@@ -225,6 +221,18 @@
         window.addEventListener('scroll', setActiveLink);
         window.addEventListener('load', setActiveLink);
 
+        // Theme toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark');
+            // Update icon
+            if (document.body.classList.contains('dark')) {
+                themeToggle.textContent = '☀️';
+            } else {
+                themeToggle.textContent = '🌙';
+            }
+        });
+
         // Load blog posts from JSON and populate the grid
         async function loadBlogPosts() {
             try {
@@ -248,7 +256,7 @@
                                 <span>${post.readTime}</span>
                             </div>
                             <p>${post.excerpt}</p>
-                            <a href="/posts/${post.slug}.html" class="btn btn-sm">Read more →</a>
+                            <a href=\"/posts/${post.slug}.html\" class="btn btn-sm">Read more →</a>
                         </div>
                     `;
                     blogGrid.appendChild(card);
