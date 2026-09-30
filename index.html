@@ -1,121 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Luan Trindade – Support Engineer & AI Enthusiast</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <!-- Header -->
-    <header>
-        <div class="container">
-            <nav>
-                <div class="logo">Luan Trindade</div>
-                <ul class="nav-links">
-                    <li><a href="#about" class="nav-link">About</a></li>
-                    <li><a href="#skills" class="nav-link">Skills</a></li>
-                    <li><a href="#projects" class="nav-link">Projects</a></li>
-                    <li><a href="#blog" class="nav-link">Blog</a></li>
-                    <li><a href="#contact" class="nav-link">Contact</a></li>
-                </ul>
-                <div class="mobile-menu-icon">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </nav>
-        </div>
-    </header>
-
-    <!-- Hero -->
-    <section class="hero" id="home">
-        <div class="container">
-            <div class="hero-content">
-                <h1>Support Engineer & AI Enthusiast</h1>
-                <p>Turning complex problems into simple solutions, one line of code at a time.</p>
-                <a href="#about" class="btn btn-primary">Learn More</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- About -->
-    <section class="section" id="about">
-        <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>I am a dedicated Support Engineer with a passion for artificial intelligence and automation. My expertise lies in troubleshooting complex systems, optimizing workflows, and bridging the gap between technical teams and end-users.</p>
-                    <p>When I'm not resolving tickets, I'm exploring the latest AI models, building small projects, and sharing my findings through this blog.</p>
-                </div>
-                <div class="about-image">
-                    <!-- Placeholder image; replace with your own -->
-                    <img src="https://via.placeholder.com/400x400?text=Your+Photo" alt="Luan Trindade">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills -->
-    <section class="section bg-light" id="skills">
-        <div class="container">
-            <h2 class="section-title">Skills & Expertise</h2>
-            <div class="skills-grid">
-                <div class="skill-card">
-                    <h3>Technical Support</h3>
-                    <p>Linux, Windows, macOS, networking, hardware diagnostics.</p>
-                </div>
-                <div class="skill-card">
-                    <h3>Scripting & Automation</h3>
-                    <p>Bash, PowerShell, Python, Ansible.</p>
-                </div>
-                <div class="skill-card">
-                    <h3>Artificial Intelligence</h3>
-                    <p>LLMs, prompt engineering, agent workflows, Hugging Face.</p>
-                </div>
-                <div class="skill-card">
-                    <h3>Web Technologies</h3>
-                    <p>HTML, CSS, JavaScript, Node.js, REST APIs.</p>
-                </div>
-                <div class="skill-card">
-                    <h3>Cloud & DevOps</h3>
-                    <p>AWS, Docker, GitHub Actions, basic CI/CD.</p>
-                </div>
-                <div class="skill-card">
-                    <h3>Communication</h3>
-                    <p>Technical writing, training, stakeholder management.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects -->
-    <section class="section" id="projects">
-        <div class="container">
-            <h2 class="section-title">Featured Projects</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <h3>AI-Powered Log Analyzer</h3>
-                    <p>A tool that uses LLMs to summarize and flag anomalies in system logs.</p>
-                    <a href="#" class="btn btn-sm">View Details</a>
-                </div>
-                <div class="project-card">
-                    <h3>Support Ticket Triager</h3>
-                    <p>Automatically categorizes and prioritizes incoming support tickets using NLP.</p>
-                    <a href="#" class="btn btn-sm">View Details</a>
-                </div>
-                <div class="project-card">
-                    <h3>Personal Knowledge Base</h3>
-                    <p>A searchable repository of solutions, scripts, and best practices.</p>
-                    <a href="#" class="btn btn-sm">View Details</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Blog -->
-    <section class="section bg-light" id="blog">
-        <div class="container">
+<div class="container">
             <h2 class="section-title">Latest Articles</h2>
             <div class="blog-grid" id="blogGrid">
                 <!-- Blog cards will be injected here by JS -->
@@ -148,7 +31,7 @@
     </section>
 
     <!-- Footer -->
-    <footer>
+    <footer class="footer">
         <div class="container">
             <p>&copy; <span id="year"></span> Luan Trindade. All rights reserved.</p>
             <div class="footer-links">
@@ -160,10 +43,11 @@
 
     <script>
         // Mobile menu toggle
-        const mobileMenuIcon = document.querySelector('.mobile-menu-icon');
-        const navLinks = document.querySelector('.nav-links');
-        mobileMenuIcon.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
+        const mobileToggle = document.querySelector('.mobile-toggle');
+        const navList = document.querySelector('.nav-list');
+        mobileToggle.addEventListener('click', () => {
+            navList.classList.toggle('active');
+            mobileToggle.classList.toggle('open');
         });
 
         // Set current year
