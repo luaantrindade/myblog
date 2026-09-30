@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import motion from "framer-motion/client";
+import { motion } from "framer-motion";
 
 export default function Contact() {
   return (
@@ -26,11 +26,11 @@ export default function Contact() {
             </div>
             <div>
               <label className="block mb-1 text-muted font-medium">Email</label>
-                <input
-                  type="email"
-                  className="w-full p-3 bg-background/50 border border-muted/30 rounded-lg focus:border-primary focus:ring-2 focus:ring-primary/20"
-                  placeholder="you@example.com"
-                />
+              <input
+                type="email"
+                className="w-full p-3 bg-background/50 border border-muted/30 rounded-lg focus:border-primary focus:ring-2 focus:ring-primary/20"
+                placeholder="you@example.com"
+              />
             </div>
             <div>
               <label className="block mb-1 text-muted font-medium">Message</label>

@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import motion from "framer-motion/client";
+import { motion } from "framer-motion";
 
 const posts = [
   {
@@ -55,8 +55,8 @@ export default function Blog() {
                   className="w-full h-48 object-cover"
                 />
                 <div className="p-4">
-                  <h3 className="mb-2 text-lg font-semibold text-primary>{post.title}</h3>
-                  <p className="mb-3 text-muted>{post.excerpt}</p>
+                  <h3 className="mb-2 text-lg font-semibold text-primary">{post.title}</h3>
+                  <p className="mb-3 text-muted">{post.excerpt}</p>
                   <div className="flex items-center justify-between text-sm text-muted">
                     <span>{post.date}</span>
                     <span>{post.readTime}</span>

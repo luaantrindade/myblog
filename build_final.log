@@ -1,0 +1,27 @@
+
+> myblog@0.1.0 build
+> next build
+
+▲ Next.js 16.3.8 (Turbopack)
+✓ Running next.config.ts took 172ms
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 8.9s
+  Running TypeScript ...
+  Finished TypeScript in 6.5s ...
+  Collecting page data using 1 worker ...
+  Generating static pages using 1 worker (0/8) ...
+Error occurred prerendering page "/". Read more: https://nextjs.org/docs/messages/prerender-error
+Error: Attempted to call useTheme() from the server but useTheme is on the client. It's not possible to invoke a client function from the server, it can only be rendered as a Component or passed to props of a Client Component.
+    at n (components/header.tsx:6:31)
+  4 |
+  5 | export default function Header() {
+> 6 |   const { theme, setTheme } = useTheme();
+    |                               ^
+  7 |
+  8 |   const toggleTheme = () => {
+  9 |     setTheme(theme === "dark" ? "light" : "dark"); {
+  digest: '2752148529'
+}
+Export encountered an error on /page: /, exiting the build.
+⨯ Next.js build worker exited with code: 1 and signal: null

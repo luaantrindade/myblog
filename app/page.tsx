@@ -36,7 +36,7 @@ export default function Home() {
             </Link>
             <Link
               href="/blog"
-              className="flex-1 border border-muted/50 hover:border-primary text-muted hover:text-primary px-6 py-3 rounded-lg font-medium transition_all hover:scale-[1.02]"
+              className="flex-1 border border-muted/50 hover:border-primary text-muted hover:text-primary px-6 py-3 rounded-lg font-medium transition-all hover:scale-[1.02]"
             >
               Read Blog
             </Link>
@@ -51,7 +51,12 @@ export default function Home() {
             Tech Stack
           </h2>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {[["AI/LLMs", "#00f2fe"], ["Web Architecture", "#4facfe"], ["Data Pipeline", "#00f2fe"], ["Cloud", "#4facfe"]].map(
+            {[
+              ["AI/LLMs", "#00f2fe"],
+              ["Web Architecture", "#4facfe"],
+              ["Data Pipeline", "#00f2fe"],
+              ["Cloud", "#4facfe"],
+            ].map(
               ([label, color]) => (
                 <div
                   key={label}
@@ -103,8 +108,8 @@ export default function Home() {
                   <div className="bg-muted/10 rounded-lg border border-muted/20 overflow-hidden hover:border-primary/50 transition-all">
                     <img src={proj.image} alt={proj.title} className="w-full h-48 object-cover" />
                     <div className="p-4">
-                      <h3 className="mb-2 text-lg font-semibold text-primary>{proj.title}</h3>
-                      <p className="mb-3 text-muted>{proj.description}</p>
+                      <h3 className="mb-2 text-lg font-semibold text-primary">{proj.title}</h3>
+                      <p className="mb-3 text-muted">{proj.description}</p>
                       <div className="flex flex-wrap gap-2 mb-3">
                         {proj.tags.map(
                           (tag) => (
@@ -182,8 +187,8 @@ export default function Home() {
                       className="w-full h-48 object-cover"
                     />
                     <div className="p-4">
-                      <h3 className="mb-2 text-lg font-semibold text-primary>{post.title}</h3>
-                      <p className="mb-3 text-muted>{post.excerpt}</p>
+                      <h3 className="mb-2 text-lg font-semibold text-primary">{post.title}</h3>
+                      <p className="mb-3 text-muted">{post.excerpt}</p>
                       <div className="flex items-center justify-between text-sm text-muted">
                         <span>{post.date}</span>
                         <span>{post.readTime}</span>
@@ -246,7 +251,7 @@ export default function Home() {
               </div>
               <button
                 type="submit"
-                className="w-full bg-primary bg-opacity-90 hover:bg-primary text-primary-foreground px-6 py-3 rounded-lg font-medium transition_all hover:scale-[1.02] shadow-lg"
+                className="w-full bg-primary bg-opacity-90 hover:bg-primary text-primary-foreground px-6 py-3 rounded-lg font-medium transition-all hover:scale-[1.02] shadow-lg"
               >
                 Send Message
               </button>

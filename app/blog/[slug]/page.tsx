@@ -2,7 +2,7 @@
 
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import motion from "framer-motion/client";
+import { motion } from "framer-motion";
 
 const posts = [
   {

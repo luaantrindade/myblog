@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import motion from "framer-motion/client";
+import { motion } from "framer-motion";
 
 export default function Projects() {
   const projects = [
@@ -72,7 +72,7 @@ export default function Projects() {
               transition={{ duration: 0.6, delay: idx * 0.1 }}
             >
               <Link
-                href={`/projects/${proj.title.toLowerCase().replace(/\\s+/g, "-")}`}
+                href={`/projects/${proj.title.toLowerCase().replace(/\s+/g, "-")}`}
                 className="block bg-muted/10 rounded-lg border border-muted/20 overflow-hidden hover:border-primary/50 transition-all"
               >
                 <img src={proj.image} alt={proj.title} className="w-full h-48 object-cover" />
@@ -82,19 +82,23 @@ export default function Projects() {
                   <div className="flex flex-wrap gap-2 mb-4">
                     {proj.tags.map(
                       (tag) => (
-                                        <span
-                  key={tag}
-                  className="px-2 py-0.5 bg-primary/20 text-primary text-xs rounded"
-                >
-                  {tag}
-                </span>
-                                    )
+                        <span
+                          key={tag}
+                          className="px-2 py-0.5 bg-primary/20 text-primary text-xs rounded"
+                        >
+                          {tag}
+                        </span>
+                      )
                     )}
                   </div>
                   <div className="space-y-2 text-sm text-muted">
                     {proj.metrics.map(
                       (m) => (
-                                        <div key={m.label} className=\"flex justify-between\">\n                  <span>{m.label}</span>\n                  <span>{m.value}</span>\n                </div>\n                                        )
+                        <div key={m.label} className="flex justify-between">
+                          <span>{m.label}</span>
+                          <span>{m.value}</span>
+                        </div>
+                      )
                     )}
                   </div>
                 </div>
