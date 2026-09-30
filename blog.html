@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog – Luan Trindade</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo">Luan Trindade</div>
+            <button class="mobile-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="nav-list">
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#blog" class="active">Blog</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Blog Section -->
+    <section class="section" id="blog">
+        <div class="container">
+            <h2 class="section-title">Blog Posts</h2>
+            <div class="blog-grid" id="blogGrid">
+                <!-- Blog cards will be injected here by JS -->
+                <div class="blog-placeholder">
+                    <p>Loading posts...</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; <span id="year"></span> Luan Trindade. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileToggle = document.querySelector('.mobile-toggle');
+        const navList = document.querySelector('.nav-list');
+        mobileToggle.addEventListener('click', () => {
+            navList.classList.toggle('active');
+            mobileToggle.classList.toggle('open');
+        });
+
+        // Set current year
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Load blog posts from JSON
+        async function loadBlogPosts() {
+            try {
+                const response = await fetch('/posts.json');
+                const posts = await response.json();
+                const blogGrid = document.getElementById('blogGrid');
+                blogGrid.innerHTML = ''; // clear placeholder
+
+                posts.forEach(post => {
+                    const card = document.createElement('div');
+                    card.className = 'blog-card';
+                    card.innerHTML = `
+                        <div class="blog-card-img">
+                            <img src="${post.image}" alt="${post.title}">
+                        </div>
+                        <div class="blog-card-content">
+                            <h3>${post.title}</h3>
+                            <div class="meta">
+                                <span>${post.date}</span>
+                                <span>${post.readTime}</span>
+                            </div>
+                            <p>${post.excerpt}</p>
+                            <a href="/posts/${post.slug}.html" class="btn btn-sm">Read more →</a>
+                        </div>
+                    `;
+                    blogGrid.appendChild(card);
+                });
+            } catch (error) {
+                console.error('Error loading blog posts:', error);
+                document.getElementById('blogGrid').innerHTML = '<p class="error">Failed to load posts.</p>';
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', loadBlogPosts);
+    </script>
+</body>
+</html>
