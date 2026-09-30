@@ -17,6 +17,13 @@
     --gradient-bg: radial-gradient(circle at center, #fafafa 0%, #e6e6e6 100%);
 }
 
+.container {
+    width: 100%;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 var(--spacing);
+}
+
 /* Reset */
 *,
 *::before,
