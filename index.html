@@ -5,91 +5,212 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Luan Trindade – Support Engineer & AI Enthusiast</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header class="hero">
-        <div class="hero-content">
-            <h1>Luan Trindade</h1>
-            <p class="tagline">Support Engineer • AI Enthusiast</p>
-            <a href="#blog" class="btn-primary">Read Blog</a>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">Luan Trindade</div>
+                <ul class="nav-links">
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#skills" class="nav-link">Skills</a></li>
+                    <li><a href="#projects" class="nav-link">Projects</a></li>
+                    <li><a href="#blog" class="nav-link">Blog</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+                <div class="mobile-menu-icon">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
         </div>
     </header>
 
-    <section id="about" class="section">
-        <h2>About Me</h2>
-        <div class="about-content">
-            <p>I specialize in keeping systems running smoothly while exploring the frontier of AI technologies. Passionate about turning complex problems into simple, reliable solutions.</p>
-            <ul class="skills">
-                <li>Linux Systems</li>
-                <li>Networking</li>
-                <li>AI/ML Ops</li>
-                <li>Automation</li>
-                <li>Cloud Infrastructure</li>
-            </ul>
-        </div>
-    </section>
-
-    <section id="portfolio" class="section bg-light">
-        <h2>Featured Projects</h2>
-        <div class="projects-grid">
-            <article class="project-card">
-                <h3>AI‑Powered Log Analyzer</h3>
-                <p>Automated anomaly detection for support tickets using LLMs.</p>
-                <a href="#" class="btn-link">Learn More</a>
-            </article>
-            <article class="project-card">
-                <h3>Self‑Healing Kubernetes Operator</h3>
-                <p>Detects and remediates node failures without manual intervention.</p>
-                <a href="#" class="btn-link">Learn More</a>
-            </article>
-            <article class="project-card">
-                <h3>Personal Knowledge Base</h3>
-                <p>Markdown‑driven site with AI‑generated summaries.</p>
-                <a href="#" class="btn-link">Learn More</a>
-            </article>
-        </div>
-    </section>
-
-    <section id="blog" class="section">
-        <h2>Latest Articles</h2>
-        <div class="posts-preview">
-            <!-- Placeholder for latest posts -->
-            <div class="post-preview">
-                <h3>Getting Started with LLMs in Production</h3>
-                <p class="meta">Sep 28, 2026 • 5 min read</p>
-                <p>A practical guide to deploying large language models safely and efficiently.</p>
-                <a href="posts/llm-production.html" class="btn-link">Read More</a>
-            </div>
-            <div class="post-preview">
-                <h3>Monitoring AI Workloads with Prometheus</h3>
-                <p class="meta">Sep 20, 2026 • 4 min read</p>
-                <p>Key metrics and alerts to keep your AI pipelines healthy.</p>
-                <a href="posts/ai-monitoring.html" class="btn-link">Read More</a>
+    <!-- Hero -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Support Engineer & AI Enthusiast</h1>
+                <p>Turning complex problems into simple solutions, one line of code at a time.</p>
+                <a href="#about" class="btn btn-primary">Learn More</a>
             </div>
         </div>
-        <a href="posts/" class="btn-primary">View All Posts</a>
     </section>
 
-    <footer class="footer">
-        <p>&copy; 2026 Luan Trindade. All rights reserved.</p>
+    <!-- About -->
+    <section class="section" id="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>I am a dedicated Support Engineer with a passion for artificial intelligence and automation. My expertise lies in troubleshooting complex systems, optimizing workflows, and bridging the gap between technical teams and end-users.</p>
+                    <p>When I'm not resolving tickets, I'm exploring the latest AI models, building small projects, and sharing my findings through this blog.</p>
+                </div>
+                <div class="about-image">
+                    <!-- Placeholder image; replace with your own -->
+                    <img src="https://via.placeholder.com/400x400?text=Your+Photo" alt="Luan Trindade">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills -->
+    <section class="section bg-light" id="skills">
+        <div class="container">
+            <h2 class="section-title">Skills & Expertise</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <h3>Technical Support</h3>
+                    <p>Linux, Windows, macOS, networking, hardware diagnostics.</p>
+                </div>
+                <div class="skill-card">
+                    <h3>Scripting & Automation</h3>
+                    <p>Bash, PowerShell, Python, Ansible.</p>
+                </div>
+                <div class="skill-card">
+                    <h3>Artificial Intelligence</h3>
+                    <p>LLMs, prompt engineering, agent workflows, Hugging Face.</p>
+                </div>
+                <div class="skill-card">
+                    <h3>Web Technologies</h3>
+                    <p>HTML, CSS, JavaScript, Node.js, REST APIs.</p>
+                </div>
+                <div class="skill-card">
+                    <h3>Cloud & DevOps</h3>
+                    <p>AWS, Docker, GitHub Actions, basic CI/CD.</p>
+                </div>
+                <div class="skill-card">
+                    <h3>Communication</h3>
+                    <p>Technical writing, training, stakeholder management.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects -->
+    <section class="section" id="projects">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3>AI-Powered Log Analyzer</h3>
+                    <p>A tool that uses LLMs to summarize and flag anomalies in system logs.</p>
+                    <a href="#" class="btn btn-sm">View Details</a>
+                </div>
+                <div class="project-card">
+                    <h3>Support Ticket Triager</h3>
+                    <p>Automatically categorizes and prioritizes incoming support tickets using NLP.</p>
+                    <a href="#" class="btn btn-sm">View Details</a>
+                </div>
+                <div class="project-card">
+                    <h3>Personal Knowledge Base</h3>
+                    <p>A searchable repository of solutions, scripts, and best practices.</p>
+                    <a href="#" class="btn btn-sm">View Details</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog -->
+    <section class="section bg-light" id="blog">
+        <div class="container">
+            <h2 class="section-title">Latest Articles</h2>
+            <div class="blog-grid" id="blogGrid">
+                <!-- Blog cards will be injected here by JS -->
+                <div class="blog-placeholder">
+                    <p>Loading posts...</p>
+                </div>
+            </div>
+            <a href="/blog.html" class="btn btn-primary">View All Posts →</a>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section" id="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <p class="contact-subtitle">Have a question, collaboration idea, or just want to say hello?</p>
+            <form class="contact-form" id="contactForm">
+                <div class="form-group">
+                    <input type="text" id="name" name="name" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="email" name="email" placeholder="Your Email" required>
+                </div>
+                <div class="form-group">
+                    <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; <span id="year"></span> Luan Trindade. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+        </div>
     </footer>
 
     <script>
-        // Simple animation on scroll
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, {threshold: 0.1});
-        document.querySelectorAll('.section, .project-card, .post-preview').forEach(el => {
-            observer.observe(el);
-            el.classList.add('hidden');
+        // Mobile menu toggle
+        const mobileMenuIcon = document.querySelector('.mobile-menu-icon');
+        const navLinks = document.querySelector('.nav-links');
+        mobileMenuIcon.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
         });
+
+        // Set current year
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Simple form validation (demo)
+        const contactForm = document.getElementById('contactForm');
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Thanks for your message! (This is a demo – form not connected to backend.)');
+            contactForm.reset();
+        });
+
+        // Load blog posts from JSON
+        async function loadBlogPosts() {
+            try {
+                const response = await fetch('/posts.json');
+                const posts = await response.json();
+                const blogGrid = document.getElementById('blogGrid');
+                blogGrid.innerHTML = ''; // clear placeholder
+
+                posts.forEach(post => {
+                    const card = document.createElement('div');
+                    card.className = 'blog-card';
+                    card.innerHTML = `
+                        <div class="blog-card-img">
+                            <img src="${post.image}" alt="${post.title}">
+                        </div>
+                        <div class="blog-card-content">
+                            <h3>${post.title}</h3>
+                            <div class="meta">
+                                <span>${post.date}</span>
+                                <span>${post.readTime}</span>
+                            </div>
+                            <p>${post.excerpt}</p>
+                            <a href="/posts/${post.slug}.html" class="btn btn-sm">Read more →</a>
+                        </div>
+                    `;
+                    blogGrid.appendChild(card);
+                });
+            } catch (error) {
+                console.error('Error loading blog posts:', error);
+                document.getElementById('blogGrid').innerHTML = '<p class="error">Failed to load posts.</p>';
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', loadBlogPosts);
     </script>
 </body>
 </html>
