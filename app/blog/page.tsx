@@ -8,7 +8,7 @@ export default function BlogPage() {
   return (
     <section className="py-24 sm:py-32">
       <div className="section-container">
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <div className="text-center max-w-3xl mx-auto mb-16 animate-fade-in-up">
           <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium mb-6">
             Insights
           </span>
@@ -19,11 +19,19 @@ export default function BlogPage() {
         </div>
         
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {/* Post 1: AI Automation in Support */}
           <article className="group glass-card rounded-2xl overflow-hidden flex flex-col hover:shadow-xl hover:shadow-primary/5 transition-all duration-300">
             <div className="relative">
-              <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=450&fit=crop" alt="AI automation" className="w-full h-48 object-cover" loading="lazy" />
+              <img
+                src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=450&fit=crop"
+                alt="AI automation in customer support"
+                className="w-full h-48 object-cover"
+                loading="lazy"
+              />
               <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/90 to-transparent">
-                <span className="px-3 py-1 rounded-full text-xs font-semibold bg-primary/20 text-primary">AI Automation</span>
+                <span className="px-3 py-1 rounded-full text-xs font-semibold bg-primary/20 text-primary">
+                  AI Automation
+                </span>
               </div>
             </div>
             <div className="flex-1 flex flex-col p-6">
@@ -45,11 +53,19 @@ export default function BlogPage() {
             </a>
           </article>
           
+          {/* Post 2: Building Slack AI Skills */}
           <article className="group glass-card rounded-2xl overflow-hidden flex flex-col hover:shadow-xl hover:shadow-primary/5 transition-all duration-300">
             <div className="relative">
-              <img src="https://images.unsplash.com/photo-1556761122-5ea35e5a856b?w=800&h=450&fit=crop" alt="Slack AI skills" className="w-full h-48 object-cover" loading="lazy" />
+              <img
+                src="https://images.unsplash.com/photo-1556761122-5ea35e5a856b?w=800&h=450&fit=crop"
+                alt="Building Slack AI skills"
+                className="w-full h-48 object-cover"
+                loading="lazy"
+              />
               <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/90 to-transparent">
-                <span className="px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/20 text-emerald-400">Slack Development</span>
+                <span className="px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/20 text-emerald-400">
+                  Slack Development
+                </span>
               </div>
             </div>
             <div className="flex-1 flex flex-col p-6">
@@ -71,11 +87,19 @@ export default function BlogPage() {
             </a>
           </article>
           
+          {/* Post 3: Career Growth in Tech */}
           <article className="group glass-card rounded-2xl overflow-hidden flex flex-col hover:shadow-xl hover:shadow-primary/5 transition-all duration-300">
             <div className="relative">
-              <img src="https://images.unsplash.com/photo-1522202176988-66294c015f3b?w=800&h=450&fit=crop" alt="Career growth" className="w-full h-48 object-cover" loading="lazy" />
+              <img
+                src="https://images.unsplash.com/photo-1522202176988-66294c015f3b?w=800&h=450&fit=crop"
+                alt="Career growth in technology"
+                className="w-full h-48 object-cover"
+                loading="lazy"
+              />
               <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/90 to-transparent">
-                <span className="px-3 py-1 rounded-full text-xs font-semibold bg-purple-500/20 text-purple-400">Career Development</span>
+                <span className="px-3 py-1 rounded-full text-xs font-semibold bg-purple-500/20 text-purple-400">
+                  Career Development
+                </span>
               </div>
             </div>
             <div className="flex-1 flex flex-col p-6">
@@ -98,7 +122,7 @@ export default function BlogPage() {
           </article>
         </div>
         
-        <div className="text-center mt-16">
+        <div className="text-center mt-16 animate-fade-in-up">
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <a href="https://github.com/luaantrindade?tab=repositories" target="_blank" rel="noopener noreferrer" className="btn-secondary flex items-center gap-2">
               View All Projects

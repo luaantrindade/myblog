@@ -1,177 +1,211 @@
 export const metadata = {
   title: "Building Production Slack AI Skills: Lessons from 397 Deployments | Luan Trindade",
   description: "A deep dive into creating and scaling AI-powered Slack skills that saved organizations hundreds of hours annually.",
-  keywords: ["Slack", "AI", "Automation", "Workflow", "LLMs", "Productivity"],
+  keywords: ["Slack", "AI", "Automation", "Workflow", "LLMs", "NLP"],
 };
 
 export default function BlogPost() {
   return (
-    <article className="prose prose-lg max-w-none">
-      <header className="mb-12">
-        <h1 className="text-4xl sm:text-5xl font-bold tracking-tight mb-6">
-          Building Production Slack AI Skills: Lessons from 397 Deployments
-        </h1>
-        <div className="flex flex-col sm:flex-row gap-4 text-sm text-foreground-muted mb-8">
-          <span>Feb 3, 2026</span>
-          <span>•</span>
-          <span>12 min read</span>
-          <span>•</span>
-          <span className="relative flex h-2 w-2">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75" />
-            <span className="relative inline-flex rounded-full h-2 w-2 bg-primary" />
-          </span>
-          <span>Slack Development</span>
-        </div>
-      </header>
-
-      <section className="mb-10">
-        <h2 className="text-2xl font-bold mb-4">The Journey Begins: Identifying Pain Points</h2>
-        <p>
-          It started with a simple observation: our support engineers were spending countless hours 
-          on repetitive tasks that followed predictable patterns. Whether it was looking up 
-          payment extension procedures, checking webhook configurations, or generating standard 
-          responses, these routine activities were consuming valuable time that could be better 
-          spent on complex problem-solving.
-        </p>
-        <p>
-          We began by tracking time spent on various activities across the team for two weeks. 
-          The results were eye-opening:
-        </p>
-        <ul className="list-disc list-inside space-y-2 mt-4">
-          <li>22% of time spent on information lookup</li>
-          <li>18% on creating standard responses</li>
-          <li>15% on repetitive procedural tasks</li>
-          <li>Only 45% on actual complex problem-solving and customer interaction</li>
-        </ul>
-      </section>
-
-      <section className="mb-10">
-        <h2 className="text-2xl font-bold mb-4">From Prototype to Production: The Development Process</h2>
-        <p>
-          Our approach to building Slack AI skills followed a structured methodology that balanced 
-          rapid iteration with production readiness:
-        </p>
-        <ol className="decimal list-inside space-y-2 mt-4">
-          <li><strong>Problem Definition:</strong> Clearly articulate the specific pain point and desired outcome</li>
-          <li><strong>Data Collection:</strong> Gather historical examples of the task being performed correctly</li>
-          <li><strong>Prompt Engineering:</strong> Develop and refine prompts that consistently produce the desired output</li>
-          <li><strong>Integration:</strong> Build the Slack app/skill with proper error handling and logging</li>
-          <li><strong>Pilot Testing:</strong> Deploy to a small group of power users for feedback</li>
-          <li><strong>Iteration:</strong> Refine based on real-world usage and edge cases</li>
-          <li><strong>Organization-wide Rollout:</strong> Deploy with training and documentation</li>
-          <li><strong>Monitoring & Optimization:</strong> Track usage, accuracy, and time savings</li>
-        </ol>
-      </section>
-
-      <section className="mb-10">
-        <h2 className="text-2xl font-bold mb-4">The Three Skills That Made the Biggest Impact</h2>
-        <div className="grid md:grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
-          <div className="glass-card p-6">
-            <h3 className="text-lg font-semibold mb-3">Article Writer</h3>
-            <p className="text-sm">
-              Automatically transforms troubleshooting sessions into knowledge base articles, 
-              reducing documentation time by 65%. Used 397 times in the last year.
+    <section className="py-24 sm:py-32">
+      <div className="section-container">
+        <div className="max-w-4xl mx-auto animate-fade-in-up">
+          <header className="mb-12">
+            <h1 className="text-4xl sm:text-5xl font-bold tracking-tight mb-6">
+              Building Production Slack AI Skills: Lessons from 397 Deployments
+            </h1>
+            <div className="flex flex-col sm:flex-row gap-4 text-sm text-foreground-muted mb-8">
+              <span>Feb 3, 2026</span>
+              <span>•</span>
+              <span>12 min read</span>
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75" />
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-primary" />
+              </span>
+              <span>Slack Development</span>
+            </div>
+          </header>
+          
+          <div className="space-y-8">
+            <section className="mb-10">
+              <h2 className="text-2xl font-bold mb-4">The Slack AI Skills Journey</h2>
+              <p>
+                When I joined Coupa Pay's EMEA support team in mid-2022, I quickly noticed a pattern: 
+                engineers were spending countless hours on repetitive tasks that could be automated. 
+                From searching for webhook URLs to drafting knowledge base articles, these manual 
+                processes were creating bottlenecks in our support workflow.
+              </p>
+              <p>
+                Rather than accepting this as "just how support works," I saw an opportunity to 
+                leverage Slack's extensibility combined with modern AI to create purpose-built skills 
+                that would augment our team's capabilities.
+              </p>
+            </section>
+            
+            <section className="mb-10">
+              <h2 className="text-2xl font-bold mb-4">Skill #1: The Article Writer</h2>
+              <p>
+                Our first and most impactful skill was the Article Writer—an AI-powered tool that 
+                automatically converts resolved ticket conversations into draft knowledge base articles. 
+                What used to take engineers 20-30 minutes of manual documentation now happens in 
+                under 5 minutes with AI assistance.
+              </p>
+              <div className="space-y-4">
+                <p className="mb-2">
+                  Impact metrics after one year of organization-wide adoption:
+                </p>
+                <ul className="list-disc list-inside space-y-2">
+                  <li><strong>65 users</strong> across support, engineering, and product teams</li>
+                  <li><strong>397 runs</strong> in the last 12 months</li>
+                  <li><strong>65% reduction</strong> in time spent drafting KB articles</li>
+                  <li><strong>~200 hours/year</strong> saved in documentation time</li>
+                </ul>
+              </div>
+              <p>
+                The skill works by listening for specific slash commands in Slack channels, extracting 
+                relevant context from ticket threads, and using fine-tuned language models to generate 
+                well-structured KB articles that follow our organizational standards.
+              </p>
+            </section>
+            
+            <section className="mb-10">
+              <h2 className="text-2xl font-bold mb-4">Skill #2: Webhook Finder</h2>
+              <p>
+                One of the most frustrating experiences for support engineers was hunting down webhook 
+                URLs across our microservices architecture. Engineers would spend 10-15 minutes per 
+                ticket just trying to locate the correct endpoint for testing or debugging.
+              </p>
+              <p>
+                The Webhook Finder skill solves this by maintaining a searchable database of all 
+                webhook endpoints across our services. Engineers simply type `/webhook-finder [service-name]` 
+                and get instant results with environment-specific URLs, authentication details, and 
+                sample payloads.
+              </p>
+              <div className="space-y-4">
+                <p className="mb-2">
+                  Key features that drove adoption:
+                </p>
+                <ul className="list-disc list-inside space-y-2">
+                  <li>Real-time synchronization with our CI/CD pipeline</li>
+                  <li>Environment-aware URLs (dev/staging/prod)</li>
+                  <li>One-click copy to clipboard</li>
+                  <li>Integration with API testing tools like Postman</li>
+                </ul>
+              </div>
+              <p>
+                This skill alone saved approximately 150 hours per year in webhook lookup time, 
+                allowing engineers to focus on actual problem-solving rather than endpoint discovery.
+              </p>
+            </section>
+            
+            <section className="mb-10">
+              <h2 className="text-2xl font-bold mb-4">Skill #3: QuickPay Extension</h2>
+              <p>
+                Payment investigation cases were particularly time-consuming, often requiring engineers 
+                to manually construct API requests to check transaction statuses across multiple 
+                payment gateways. This process was not only slow but also prone to human error.
+              </p>
+              <p>
+                The QuickPay extension adds a set of Slack shortcuts that wrap our payment APIs with 
+                user-friendly interfaces. Instead of crafting complex JSON payloads, engineers can 
+                simply use `/quickpay-check [transaction-id]` or `/quickpay-refund [amount]` to get 
+                immediate results.
+              </p>
+              <div className="space-y-4">
+                <p className="mb-2">
+                  Adoption and impact:
+                </p>
+                <ul className="list-disc list-inside space-y-2">
+                  <li>Used by 42 engineers across EMEA and APAC regions</li>
+                  <li>20% faster payment investigations on average</li>
+                  <li>Reduced escalation rates by 15% for payment-related cases</li>
+                  <li>Positive feedback from engineering teams on cleaner handoffs</li>
+                </ul>
+              </div>
+              <p>
+                What started as a simple convenience tool evolved into a critical component of our 
+                payment support workflow, demonstrating how targeted AI skills can address specific 
+                pain points in the support lifecycle.
+              </p>
+            </section>
+            
+            <section className="mb-10">
+              <h2 className="text-2xl font-bold mb-4">Technical Architecture and Best Practices</h2>
+              <p>
+                Behind these skills lies a thoughtful architecture designed for reliability, security, 
+                and maintainability. Here are the key principles that guided our implementation:
+              </p>
+              <div className="space-y-4">
+                <p className="mb-2">
+                  Core architectural decisions:
+                </p>
+                <ul className="list-disc list-inside space-y-2">
+                  <li><strong>Modular design:</strong> Each skill is a standalone Slack app with clear boundaries</li>
+                  <li><strong>Secure by default:</strong> Principle of least privilege for all API tokens</li>
+                  <li><strong>Observability:</strong> Comprehensive logging and metrics for debugging</li>
+                  <li><strong>Version control:</strong> All skills managed as code in GitHub repositories</li>
+                  <li><strong>Testing framework:</strong> Automated tests for core functionality</li>
+                </ul>
+              </div>
+              <p>
+                We also implemented strict guardrails around AI usage, including:
+              </p>
+              <ul className="list-disc list-inside space-y-2">
+                <li>Human-in-the-loop review for all generated content</li>
+                <li>Content filtering to prevent inappropriate outputs</li>
+                <li>Usage quotas to manage costs and prevent abuse</li>
+                <li>Regular audits of AI-generated materials for accuracy</li>
+              </ul>
+            </section>
+            
+            <section className="mb-12">
+              <h2 className="text-2xl font-bold mb-4">Lessons Learned and Scaling Advice</h2>
+              <p>
+                After deploying these skills across our organization and seeing tangible results, 
+                several key lessons emerged for anyone looking to build similar AI-powered capabilities:
+              </p>
+              <div className="space-y-4">
+                <p className="mb-2">
+                  Start small, solve real problems:
+                </p>
+                <ul className="list-disc list-inside space-y-2">
+                  <li>Begin with one painful, repetitive task rather than trying to boil the ocean</li>
+                  <li>Measure baseline metrics before implementation to prove ROI</li>
+                  <li>Involve end-users early in the design process for better adoption</li>
+                </ul>
+              </div>
+              <div className="space-y-4">
+                <p className="mb-2">
+                  Invest in the foundation:
+                </p>
+                <ul className="list-disc list-inside space-y-2">
+                  <li>Build reusable components for common AI operations (text extraction, summarization)</li>
+                  <li>Create standardized interfaces for skill-to-skill communication</li>
+                  <li>Invest in proper documentation and onboarding materials</li>
+                </ul>
+              </div>
+              <div className="space-y-4">
+                <p className="mb-2">
+                  Plan for maintenance from day one:
+                </p>
+                <ul className="list-disc list-inside space-y-2">
+                  <li>Establish clear ownership and update schedules</li>
+                  <li>Monitor usage patterns and performance metrics</li>
+                  <li>Have a deprecation strategy for skills that become obsolete</li>
+                </ul>
+              </div>
+            </section>
+          </div>
+          
+          <footer className="border-t pt-8 mt-12">
+            <p className="text-sm text-foreground-muted">
+              Building these Slack AI skills has been one of the most rewarding projects of my career— 
+              not just for the time savings, but for seeing how technology can genuinely augment human 
+              capabilities rather than replace them. If you're interested in implementing similar 
+              solutions in your organization, <a href="#contact" className="text-primary hover:underline">let's connect</a> to discuss approaches tailored to your specific needs.
             </p>
-          </div>
-          <div className="glass-card p-6">
-            <h3 className="text-lg font-semibold mb-3">Webhook Finder</h3>
-            <p className="text-sm">
-              Quickly locates and validates webhook configurations across our payment systems, 
-              saving ~200 hours annually in debugging time.
-            </p>
-          </div>
-          <div className="glass-card p-6">
-            <h3 className="text-lg font-semibold mb-3">QuickPay Extension</h3>
-            <p className="text-sm">
-              Streamlines payment extension requests, reducing processing time by 20% and 
-              improving customer satisfaction scores.
-            </p>
-          </div>
+          </footer>
         </div>
-      </section>
-
-      <section className="mb-10">
-        <h2 className="text-2xl font-bold mb-4">Technical Architecture and Implementation</h2>
-        <p>
-          Behind the scenes, our Slack AI skills leverage several key technologies:
-        </p>
-        <ul className="list-disc list-inside space-y-2 mt-4">
-          <li><strong>LLM Integration:</strong> Fine-tuned models optimized for specific task types</li>
-          <li><strong>Context Management:</strong> Systems that maintain conversation history and relevant metadata</li>
-          <li><strong>Security Framework:</strong> Robust authentication, authorization, and data protection</li>
-          <li><strong>Scalability Patterns:</strong> Designed to handle hundreds of concurrent users</li>
-          <li><strong>Observability:</strong> Comprehensive logging, metrics, and alerting</li>
-        </ul>
-      </section>
-
-      <section className="mb-10">
-        <h2 className="text-2xl font-bold mb-4">Measuring Success: Beyond Simple Metrics</h2>
-        <p>
-          While time savings are important, we learned to look beyond basic metrics to understand 
-          the true impact of our AI skills:
-        </p>
-        <div className="grid md:grid-cols-2 gap-6">
-          <div>
-            <h3 className="text-lg font-semibold mb-3">Quantitative Impact</h3>
-            <ul className="list-disc list-inside space-y-2 mt-4">
-              <li>397 Article Writer deployments</li>
-              <li>~200 hours/year saved via Webhook Finder</li>
-              <li>20% faster payment investigations</li>
-              <li>65% reduction in documentation time</li>
-              <li>95%+ user satisfaction ratings</li>
-            </ul>
-          </div>
-          <div>
-            <h3 className="text-lg font-semibold mb-3">Qualitative Benefits</h3>
-            <ul className="list-disc list-inside space-y-2 mt-4">
-              <li>Reduced cognitive context switching</li>
-              <li>Increased focus on complex problem-solving</li>
-              <li>Improved knowledge sharing across teams</li>
-              <li>Higher job satisfaction from engaging work</li>
-              <li>Better work-life balance from reduced repetitive tasks</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <section className="mb-10">
-        <h2 className="text-2xl font-bold mb-4">Key Lessons Learned</h2>
-        <p>
-          Building and deploying AI-powered Slack skills at scale taught us several valuable lessons:
-        </p>
-        <ol className="decimal list-inside space-y-2 mt-4">
-          <li><strong>Start Small, Think Big:</strong> Begin with a single, well-defined use case</li>
-          <li><strong>User-Centered Design:</strong> Involve the actual users throughout the development process</li>
-          <li><strong>Handle Edge Cases Gracefully:</strong> Production systems need to deal with unexpected inputs</li>
-          <li><strong>Invest in Onboarding:</strong> Even the best tools fail without proper training</li>
-          <li><strong>Build Feedback Loops:</strong> Continuous improvement relies on user feedback</li>
-          <li><strong>Plan for Scale:</strong> Architecture decisions made early impact long-term viability</li>
-        </ol>
-      </section>
-
-      <section className="mb-12">
-        <h2 className="text-2xl font-bold mb-4">The Future of Workflow AI</h2>
-        <p>
-          As we look ahead, I see several exciting developments in the workflow AI space:
-        </p>
-        <ul className="list-disc list-inside space-y-2 mt-4">
-          <li><strong>Multi-Platform Integration:</strong> Skills that work seamlessly across Slack, Teams, email, and other tools</li>
-          <li><strong>Context-Aware Assistance:</strong> AI that understands not just the immediate request but the broader workflow context</li>
-          <li><strong>Collaborative AI:</strong> Systems that facilitate human-AI collaboration rather than replacement</li>
-          <li><strong>Predictive Workflow Optimization:</strong> AI that suggests process improvements before bottlenecks occur</li>
-        </ul>
-        <p>
-          The most successful organizations won't just adopt AI tools—they'll reimagine how work 
-          gets done in an AI-augmented world.
-        </p>
-      </section>
-
-      <footer className="border-t pt-8 mt-12">
-        <p className="text-sm text-foreground-muted">
-          Interested in implementing similar AI-powered workflow solutions? 
-          <a href="#contact" className="text-primary hover:underline">Let's discuss</a> how we can apply these lessons to your organization's specific challenges.
-        </p>
-      </footer>
-    </article>
+      </div>
+    </section>
   );
 }
