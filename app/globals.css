@@ -165,16 +165,55 @@ body {
   }
 }
 
-/* Section container */
+/* Section container - replaced @apply with actual CSS */
 .section-container {
-  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  max-width: 80rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 640px) {
+  .section-container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section-container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
 }
 
 /* Section heading */
 .section-heading {
-  @apply text-3xl sm:text-4xl font-bold tracking-tight;
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  font-weight: 700;
+  letter-spacing: -0.025em;
 }
 
+@media (min-width: 640px) {
+  .section-heading {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
+}
+
+/* Section subheading */
 .section-subheading {
-  @apply text-lg sm:text-xl text-foreground-muted max-w-2xl;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  color: var(--color-foreground-muted);
+  max-width: 42rem;
+}
+
+@media (min-width: 640px) {
+  .section-subheading {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
 }
