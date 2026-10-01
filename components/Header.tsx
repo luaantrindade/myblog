@@ -62,6 +62,11 @@ export default function Header() {
     return `h-4 w-4 text-foreground-muted transition-transform ${langOpen ? "rotate-180" : ""}`;
   };
 
+  // Theme-aware overlay for mobile menu: dark overlay in light mode, light overlay in dark mode
+  const mobileMenuOverlayClass = resolvedTheme === "dark"
+    ? "bg-white/50 backdrop-blur-sm" // light overlay for dark mode
+    : "bg-black/50 backdrop-blur-sm"; // dark overlay for light mode
+
   if (!mounted) {
     return (
       <header className="fixed top-0 left-0 right-0 z-50 h-16 bg-background/90 backdrop-blur-xl border-b border-white/10" />
@@ -246,8 +251,8 @@ export default function Header() {
               </button>
             </div>
           </div>
-          {/* Background overlay and backdrop blur */}
-          <div className="absolute inset-0 -z-10 bg-black/50 backdrop-blur-sm" />
+          {/* Background overlay and backdrop blur - theme aware */}
+          <div className={`absolute inset-0 -z-10 ${mobileMenuOverlayClass}`} />
         </div>
       )}
 
