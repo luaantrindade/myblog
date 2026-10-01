@@ -17,8 +17,8 @@ export default function BlogPage() {
             Articles on AI automation, support engineering, technical leadership, and building intelligent systems.
           </p>
         </div>
-        
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+       
+        <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {/* Post 1: AI Automation in Support */}
           <article className="group glass-card rounded-2xl overflow-hidden flex flex-col hover:shadow-xl hover:shadow-primary/5 transition-all duration-300">
             <div className="relative">

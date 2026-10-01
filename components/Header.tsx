@@ -50,7 +50,7 @@ export default function Header() {
       // External link or internal route - let Next.js handle it
       return;
     }
-    
+
     const element = document.querySelector(href);
     if (element) {
       element.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -74,7 +74,7 @@ export default function Header() {
 
   return (
     <header className={headerClass}>
-      <nav className="section-container flex h-full items-center justify-between" aria-label="Main navigation">
+      <nav className="section-container flex h-full items-center justify-between px-4 sm:px-6 lg:px-8" aria-label="Main navigation">
         {/* Logo */}
         <Link
           href="#home"
@@ -166,7 +166,7 @@ export default function Header() {
         {/* Mobile Menu Button */}
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="md:hidden p-2 rounded-xl bg-background-elevated border border-border-light text-foreground hover:border-primary/50 transition-all duration-200"
+          className="md:hidden p-2.5 rounded-xl bg-background-elevated border border-border-light text-foreground hover:border-primary/50 transition-all duration-200"
           aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
           aria-expanded={mobileMenuOpen}
           aria-controls="mobile-menu"
@@ -179,7 +179,7 @@ export default function Header() {
       {mobileMenuOpen && (
         <div
           id="mobile-menu"
-          className="md:hidden bg-background/80 backdrop-blur-xl border-t border-white/10 animate-fade-in"
+          className="md:hidden fixed inset-0 z-40 bg-background/95 backdrop-blur-xl border-t border-white/10"
           role="navigation"
           aria-label="Mobile navigation"
         >
@@ -200,35 +200,35 @@ export default function Header() {
                 {link.label}
               </Link>
             ))}
+          </div>
 
-            <div className="pt-4 border-t border-white/10 flex flex-col gap-3">
-              {/* Language in mobile */}
-              <div className="flex items-center gap-3">
-                <Globe className="h-5 w-5 text-foreground-muted" />
-                <select
-                  value={currentLang.code}
-                  onChange={(e) => setCurrentLang(languages.find((l) => l.code === e.target.value) || languages[0])}
-                  className="flex-1 px-4 py-3 rounded-xl bg-background-elevated border border-border-light text-foreground text-base appearance-none focus:border-primary focus:ring-2 focus:ring-primary/20 focus:outline-none"
-                >
-                  {languages.map((lang) => (
-                    <option key={lang.code} value={lang.code}>
-                      {lang.flag} {lang.label}
-                    </option>
-                  ))}
-                </select>
-              </div>
-
-              {/* Theme in mobile */}
-              <button
-                onClick={toggleTheme}
-                className="flex items-center justify-between px-4 py-3 rounded-xl bg-background-elevated border border-border-light text-foreground hover:border-primary/50 transition-all duration-200"
+          <div className="pt-4 border-t border-white/10 flex flex-col gap-3">
+            {/* Language in mobile */}
+            <div className="flex items-center gap-3">
+              <Globe className="h-5 w-5 text-foreground-muted" />
+              <select
+                value={currentLang.code}
+                onChange={(e) => setCurrentLang(languages.find((l) => l.code === e.target.value) || languages[0])}
+                className="flex-1 px-4 py-3 rounded-xl bg-background-elevated border border-border-light text-foreground text-base appearance-none focus:border-primary focus:ring-2 focus:ring-primary/20 focus:outline-none"
               >
-                <div className="flex items-center gap-3">
-                  {resolvedTheme === "dark" ? <Moon className="h-5 w-5" /> : <Sun className="h-5 w-5" />}
-                  <span>{resolvedTheme === "dark" ? "Dark Mode" : "Light Mode"}</span>
-                </div>
-              </button>
+                {languages.map((lang) => (
+                  <option key={lang.code} value={lang.code}>
+                    {lang.flag} {lang.label}
+                  </option>
+                ))}
+              </select>
             </div>
+
+            {/* Theme in mobile */}
+            <button
+              onClick={toggleTheme}
+              className="flex items-center justify-between px-4 py-3 rounded-xl bg-background-elevated border border-border-light text-foreground hover:border-primary/50 transition-all duration-200"
+            >
+              <div className="flex items-center gap-3">
+                {resolvedTheme === "dark" ? <Moon className="h-5 w-5" /> : <Sun className="h-5 w-5" />}
+                <span>{resolvedTheme === "dark" ? "Dark Mode" : "Light Mode"}</span>
+              </div>
+            </button>
           </div>
         </div>
       )}
@@ -236,7 +236,7 @@ export default function Header() {
       {/* Backdrop for mobile menu */}
       {mobileMenuOpen && (
         <div
-          className="md:hidden fixed inset-0 z-40 bg-black/50 animate-fade-in"
+          className="md:hidden fixed inset-0 z-30 bg-black/50 animate-fade-in"
           onClick={() => setMobileMenuOpen(false)}
           aria-hidden="true"
         />

@@ -28,15 +28,15 @@ export default function Footer() {
       {/* Background glow */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-primary/5 rounded-full blur-3xl -translate-y-1/2" aria-hidden="true" />
 
-      <div className="section-container relative py-16 lg:py-24">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+      <div className="section-container relative py-12 lg:py-20">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
           {/* Brand */}
           <div className="lg:col-span-1">
-            <Link href="/" className="flex items-center gap-2 text-xl font-bold text-foreground mb-6" aria-label="Luan Trindade - Home">
+            <Link href="/" className="flex items-center gap-2 text-xl font-bold text-foreground mb-4" aria-label="Luan Trindade - Home">
               <span className="gradient-text">LT</span>
-              <span>Luan Trindade</span>
+              <span className="hidden sm:inline">Luan Trindade</span>
             </Link>
-            <p className="text-foreground-muted leading-relaxed mb-6 max-w-xs">
+            <p className="text-foreground-muted leading-relaxed mb-4 max-w-xs">
               AI-powered support & automation specialist. Building intelligent solutions with LLMs, NLP, and smart workflows.
             </p>
             <div className="flex items-center gap-2 text-foreground-muted text-sm">
@@ -47,13 +47,13 @@ export default function Footer() {
 
           {/* Navigation */}
           <nav className="lg:col-span-1" aria-label="Site navigation">
-            <h4 className="font-semibold text-foreground mb-4">Navigate</h4>
-            <ul className="space-y-3">
+            <h4 className="font-semibold text-foreground mb-3">Navigate</h4>
+            <ul className="space-y-2">
               {footerLinks.navigate.map((link) => (
                 <li key={link.label}>
                   <Link
                     href={link.href}
-                    className="text-foreground-muted hover:text-primary transition-colors text-sm"
+                    className="text-foreground-muted hover:text-primary transition-colors text-sm block py-1"
                     onClick={(e) => {
                       // For internal links that are anchors, prevent default and scroll
                       if (link.href.startsWith("#")) {
@@ -72,15 +72,15 @@ export default function Footer() {
 
           {/* Connect */}
           <nav className="lg:col-span-1" aria-label="Connect">
-            <h4 className="font-semibold text-foreground mb-4">Connect</h4>
-            <ul className="space-y-3">
+            <h4 className="font-semibold text-foreground mb-3">Connect</h4>
+            <ul className="space-y-2">
               {footerLinks.connect.map((link) => (
                 <li key={link.label}>
                   <a
                     href={link.href}
                     target={link.external ? "_blank" : undefined}
                     rel={link.external ? "noopener noreferrer" : undefined}
-                    className="flex items-center gap-2 text-foreground-muted hover:text-primary transition-colors text-sm"
+                    className="flex items-center gap-2 text-foreground-muted hover:text-primary transition-colors text-sm block py-1"
                     onClick={(e) => {
                       // For internal links that are anchors, prevent default and scroll
                       if (link.href.startsWith("#")) {
@@ -100,8 +100,8 @@ export default function Footer() {
 
           {/* Status */}
           <div className="lg:col-span-1">
-            <h4 className="font-semibold text-foreground mb-4">Status</h4>
-            <div className="space-y-4">
+            <h4 className="font-semibold text-foreground mb-3">Status</h4>
+            <div className="space-y-3">
               <div className="p-4 rounded-xl bg-background border border-border-light">
                 <div className="flex items-center gap-3 mb-2">
                   <div className="p-2 rounded-lg bg-primary/10">
@@ -134,14 +134,15 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-12 pt-8 border-t border-border-light flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-foreground-muted text-sm">
-            © {currentYear} Luan Trindade. All rights reserved.
-          </p>
-
-          <div className="flex items-center gap-4">
-            <p className="text-foreground-muted text-sm">Built with</p>
+        <div className="mt-10 pt-8 border-t border-border-light flex flex-col sm:flex-row items-center justify-between gap-4 sm:gap-6">
+          <div className="flex flex-col items-center sm:flex-row sm:justify-center">
+            <p className="text-foreground-muted text-sm">
+              © {currentYear} Luan Trindade. All rights reserved.
+            </p>
+          </div>
+          <div className="flex flex-col items-center sm:flex-row sm:justify-center gap-2 sm:gap-4">
             <div className="flex items-center gap-1">
+              <p className="text-foreground-muted text-sm">Built with</p>
               <Code2 className="h-4 w-4 text-primary" />
               <span className="text-foreground-muted text-sm">Next.js</span>
             </div>
@@ -150,11 +151,10 @@ export default function Footer() {
               <span className="text-foreground-muted text-sm">in Ireland</span>
             </div>
           </div>
-
-          <div className="flex items-center gap-6 text-sm text-foreground-muted">
-            <a href="/privacy" className="hover:text-primary transition-colors">Privacy</a>
-            <a href="/terms" className="hover:text-primary transition-colors">Terms</a>
-            <a href="/cookies" className="hover:text-primary transition-colors">Cookies</a>
+          <div className="flex flex-col items-center sm:flex-row sm:justify-center gap-2 sm:gap-4">
+            <a href="/privacy" className="text-foreground-muted text-sm hover:text-primary transition-colors">Privacy</a>
+            <a href="/terms" className="text-foreground-muted text-sm hover:text-primary transition-colors">Terms</a>
+            <a href="/cookies" className="text-foreground-muted text-sm hover:text-primary transition-colors">Cookies</a>
           </div>
         </div>
       </div>
