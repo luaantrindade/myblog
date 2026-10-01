@@ -179,7 +179,7 @@ export default function Header() {
       {mobileMenuOpen && (
         <div
           id="mobile-menu"
-          className="md:hidden fixed inset-0 z-40 bg-background/95 backdrop-blur-xl border-t border-white/10"
+          className="md:hidden fixed inset-0 z-40 bg-background/98 backdrop-blur-xl border-t border-white/10"
           role="navigation"
           aria-label="Mobile navigation"
         >
