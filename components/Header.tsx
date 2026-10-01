@@ -64,13 +64,13 @@ export default function Header() {
 
   if (!mounted) {
     return (
-      <header className="fixed top-0 left-0 right-0 z-50 h-16 bg-background/80 backdrop-blur-xl border-b border-white/10" />
+      <header className="fixed top-0 left-0 right-0 z-50 h-16 bg-background/90 backdrop-blur-xl border-b border-white/10" />
     );
   }
 
   const headerClass = scrolled
-    ? "fixed top-0 left-0 right-0 z-50 h-16 bg-background/80 backdrop-blur-xl border-b border-white/20 shadow-xl shadow-black/20 transition-all duration-300"
-    : "fixed top-0 left-0 right-0 z-50 h-16 bg-background/80 backdrop-blur-xl border-b border-transparent transition-all duration-300";
+    ? "fixed top-0 left-0 right-0 z-50 h-16 bg-background/90 backdrop-blur-xl border-b border-white/20 shadow-xl shadow-black/20 transition-all duration-300"
+    : "fixed top-0 left-0 right-0 z-50 h-16 bg-background/90 backdrop-blur-xl border-b border-transparent transition-all duration-300";
 
   return (
     <header className={headerClass}>
