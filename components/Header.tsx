@@ -179,7 +179,7 @@ export default function Header() {
       {mobileMenuOpen && (
         <div
           id="mobile-menu"
-          className="md:hidden fixed inset-0 z-40 bg-background/95 backdrop-blur-xl border-t border-white/10"
+          className="md:hidden fixed inset-0 z-40 bg-background/90 backdrop-blur-xl border-t border-white/10"
           role="navigation"
           aria-label="Mobile navigation"
         >
@@ -195,7 +195,7 @@ export default function Header() {
                   }
                   // For absolute URLs or internal routes, let the browser/Next.js handle navigation
                 }}
-                className="block px-4 py-3 rounded-xl text-lg font-medium text-foreground-muted hover:text-primary hover:bg-background-elevated transition-all duration-200"
+                className="block w-full px-4 py-3 rounded-xl text-lg font-medium text-foreground-muted hover:text-primary hover:bg-primary/10 transition-all duration-200"
               >
                 {link.label}
               </Link>
