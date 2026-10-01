@@ -179,7 +179,7 @@ export default function Header() {
       {mobileMenuOpen && (
         <div
           id="mobile-menu"
-          className="md:hidden fixed inset-0 z-40 bg-background/98 backdrop-blur-xl border-t border-white/10"
+          className="md:hidden fixed inset-0 z-40"
           role="navigation"
           aria-label="Mobile navigation"
         >
@@ -246,6 +246,8 @@ export default function Header() {
               </button>
             </div>
           </div>
+          {/* Background overlay and backdrop blur */}
+          <div className="absolute inset-0 -z-10 bg-black/50 backdrop-blur-sm" />
         </div>
       )}
 
