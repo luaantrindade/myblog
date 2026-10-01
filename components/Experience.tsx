@@ -1,119 +1,118 @@
 "use client";
 
 import { useState } from "react";
-import { Building2, GraduationCap, Award, Code2, FlaskConical, Globe, MapPin, Calendar, Building } from "lucide-react";
+import { Building2, GraduationCap, Award, Code2, FlaskConical, Globe, MapPin, Calendar, Building, Shield } from "lucide-react";
 
 const experiences = [
   {
-    id: "munai",
-    company: "Munai",
-    role: "Senior AI Engineer / Founding Team",
-    period: "2023 — Present",
-    location: "Dublin, Ireland 🇮🇪 (Remote)",
+    id: "coupa",
+    company: "Coupa Software (Coupa Pay)",
+    role: "Technical Support Engineer",
+    period: "06/2022 — Present",
+    location: "Dublin, Ireland 🇮🇪",
     type: "work",
     description:
-      "Leading AI/ML initiatives for healthcare automation. Building LLM-powered clinical decision support, medical coding automation, and patient communication systems. Architected end-to-end ML platform serving 50+ hospitals.",
+      "Own resolution of high-severity Payment Rails, Web Services and API cases for enterprise customers. Escalate and coordinate directly with Engineering and Product when cases surface product defects or gaps.",
     achievements: [
-      "Reduced clinical documentation time by 40% via LLM automation",
-      "Built medical coding engine with 96% accuracy (ICD-10/CPT)",
-      "Designed RAG pipeline for clinical guidelines retrieval",
-      "Led team of 5 ML engineers, established MLOps practices",
+      "Resolved 4,653 of 4,677 owned cases (99.5% closure rate) sustained through solo EMEA coverage",
+      "Built 4 production Slack/AI skills adopted org-wide: Article Writer (65 users, 397 runs, 65% KB drafting time reduction), Webhook Finder (~200 hrs/year saved), QuickPay extension (20% faster payment investigations)",
+      "Presented to COE (Jul 2025) and Leadership (Aug 2025) securing global launch Sep 14, 2026 — owned idea-to-adoption cycle end-to-end",
+      "Authored 69 KB articles (59 published) + Confluence docs, converting troubleshooting into reusable content",
+      "Resolved multi-party escalations: Citi charge-timing (Jabil), TransferMate vendor-payment blocker (Raiders FC), API account-format mismatch (JTC Group multi-currency)",
+      "Supported enterprise accounts: Barclays, HSBC, Saga Group, Merlin — earned direct customer recognition on leadership-escalated case",
+      "Appointed EMEA regional lead on Support Security Cohort, authoring org-wide production access guidance",
+      "Mentored across Dublin, Pune, Bogotá — ran onboarding, knowledge-management sessions, tool training",
     ],
-    technologies: ["LLMs", "RAG", "FastAPI", "Kubernetes", "PostgreSQL", "Weights & Biases", "LangChain", "FHIR"],
+    technologies: ["Slack Apps", "Gemini AI", "Salesforce", "SQL", "New Relic", "Grafana", "Kibana", "JIRA", "Confluence", "Git", "Payment Rails", "APIs"],
     icon: Building2,
     color: "from-primary to-blue-500",
   },
   {
-    id: "ufpr-vri",
-    company: "UFPR — VRI Lab (Virtual Reality & Interaction)",
-    role: "Research Scientist / PhD Candidate",
-    period: "2020 — 2023",
-    location: "Curitiba, Brazil 🇧🇷",
-    type: "research",
-    description:
-      "PhD research in Human-Computer Interaction and Medical VR. Developed immersive VR systems for surgical training and rehabilitation. Published 8+ papers at top-tier venues (IEEE VR, CHI, ISMAR).",
-    achievements: [
-      "Published 8 papers at IEEE VR, CHI, ISMAR, MICCAI",
-      "Built VR surgical simulator with haptic feedback",
-      "Secured $200K in research grants (CNPq, CAPES)",
-      "Supervised 4 Master's students, 6 undergrads",
-    ],
-    technologies: ["Unity", "C#", "Python", "PyTorch", "ROS 2", "OpenXR", "SteamVR", "MATLAB"],
-    icon: GraduationCap,
-    color: "from-purple-500 to-pink-500",
-  },
-  {
-    id: "rnp",
-    company: "RNP (National Research Network)",
-    role: "Senior Software Engineer / Tech Lead",
-    period: "2018 — 2020",
-    location: "Brasília, Brazil 🇧🇷",
+    id: "irish-tech",
+    company: "Irish Tech Society",
+    role: "Web Developer",
+    period: "01/2021 — 06/2021",
+    location: "Dublin, Ireland 🇮🇪",
     type: "work",
     description:
-      "Led development of national-scale research infrastructure. Built monitoring, authentication, and collaboration platforms serving 100+ universities and research institutes across Brazil.",
+      "Built website layouts and UIs with HTML5, CSS (Bootstrap 4), JavaScript, jQuery and PHP. Created SQL databases, tables and stored procedures. Integrated mailing-list functionality via MailChimp API.",
     achievements: [
-      "Architected eduroam BR — 2M+ daily authentications",
-      "Built real-time network monitoring platform (10K+ devices)",
-      "Led migration to Kubernetes, reduced deployment time 80%",
-      "Open-sourced 3 internal tools adopted by community",
+      "Built and maintained production sites (e.g. irishtechsociety.ie) with UI/UX and product team",
+      "Integrated MailChimp API for mailing-list functionality",
+      "Created SQL databases, tables, and stored procedures for dynamic content",
     ],
-    technologies: ["Go", "Kubernetes", "Prometheus", "Grafana", "Keycloak", "OpenStack", "Ansible", "Python"],
-    icon: Globe,
+    technologies: ["HTML5", "CSS3", "Bootstrap 4", "JavaScript", "jQuery", "PHP", "SQL", "MailChimp API", "MySQL"],
+    icon: Code2,
     color: "from-emerald-500 to-teal-500",
   },
   {
-    id: "c3sl",
-    company: "C3SL (Center for Scientific Software Libre)",
-    role: "Full Stack Developer / Researcher",
-    period: "2016 — 2018",
-    location: "Curitiba, Brazil 🇧🇷",
+    id: "loylap",
+    company: "Loylap",
+    role: "Data Scientist",
+    period: "11/2019 — 07/2020",
+    location: "Dublin, Ireland 🇮🇪",
     type: "work",
     description:
-      "Early career building open-source scientific software. Contributed to Debian, developed lab management systems, and built web platforms for research collaboration. Strong focus on free software principles.",
+      "Performed data analysis and visualization to extract business insights. Built scripts to automate data-gathering processes.",
     achievements: [
-      "Debian Developer — maintained 12+ packages",
-      "Built LabGestão — lab management system (50+ labs)",
-      "Contributed to GNOME, KDE, and Linux kernel",
-      "Organized 3 editions of Latinoware (5K+ attendees)",
+      "Automated data-gathering pipelines reducing manual collection time",
+      "Built visualizations for business stakeholder decision-making",
+      "Extracted actionable insights from customer behavior data",
     ],
-    technologies: ["Python", "Django", "PostgreSQL", "Debian", "Git", "C", "JavaScript", "Docker"],
+    technologies: ["Python", "Data Analysis", "Visualization", "Automation", "Pandas", "SQL"],
+    icon: FlaskConical,
+    color: "from-purple-500 to-pink-500",
+  },
+  {
+    id: "skill-fullstack",
+    company: "Skill Informatica",
+    role: "Full Stack Developer",
+    period: "08/2018 — 07/2019",
+    location: "Curvelo, Brazil 🇧🇷",
+    type: "work",
+    description:
+      "Developed and maintained web systems end-to-end (PHP, MySQL, ExtJS, JavaScript). Converted business requirements into technical specifications within Agile/SCRUM team.",
+    achievements: [
+      "End-to-end web system development and maintenance",
+      "Agile/SCRUM delivery with cross-functional team",
+      "Business requirement analysis and technical specification",
+    ],
+    technologies: ["PHP", "MySQL", "ExtJS", "JavaScript", "HTML/CSS", "Agile", "SCRUM"],
     icon: Code2,
     color: "from-amber-500 to-orange-500",
   },
   {
-    id: "education",
-    company: "Federal University of Paraná (UFPR)",
-    role: "PhD in Computer Science (Human-Computer Interaction)",
-    period: "2020 — 2024",
-    location: "Curitiba, Brazil 🇧🇷",
-    type: "education",
+    id: "skill-support",
+    company: "Skill Informatica",
+    role: "Technical Support Analyst",
+    period: "08/2015 — 07/2018",
+    location: "Curvelo, Brazil 🇧🇷",
+    type: "work",
     description:
-      "Doctoral research on immersive technologies for healthcare. Thesis: \"Adaptive Virtual Reality Systems for Surgical Training and Rehabilitation\". GPA: 4.0/4.0. Advisor: Prof. Dr. Maria Cecilia Calani Baranauskas.",
+      "Delivered 1st and 2nd-level IT support via phone, email, web-chat and remote/desk-side assistance. Troubleshooting software and OS issues, installing company software for clients.",
     achievements: [
-      "Thesis awarded Best PhD Thesis 2024 (SBC)",
-      "CAPES Doctoral Scholarship (full funding)",
-      "Visiting Researcher at TU Delft, Netherlands (6 months)",
-      "Teaching Assistant: Computer Graphics, HCI, ML",
+      "Multi-channel support: phone, email, web-chat, remote/desk-side",
+      "Software/OS troubleshooting and deployment",
+      "Client software installation and configuration",
     ],
-    technologies: ["Research", "VR/AR", "HCI", "Medical AI", "Unity", "PyTorch", "Statistical Analysis"],
-    icon: GraduationCap,
-    color: "from-indigo-500 to-purple-500",
+    technologies: ["IT Support", "Windows", "Linux", "Remote Support", "Troubleshooting", "Software Deployment"],
+    icon: Shield,
+    color: "from-red-500 to-orange-500",
   },
   {
-    id: "education-msc",
-    company: "Federal University of Paraná (UFPR)",
-    role: "MSc in Computer Science (Software Engineering)",
-    period: "2017 — 2019",
-    location: "Curitiba, Brazil 🇧🇷",
+    id: "education",
+    company: "Universidade Pitágoras Unopar",
+    role: "Computer Systems Analysis",
+    period: "Completed 12/2017",
+    location: "Curvelo, Brazil 🇧🇷",
     type: "education",
     description:
-      "Master's research on software architecture for distributed scientific systems. Thesis: \"Microservice Architecture for High-Throughput Scientific Data Processing\". GPA: 4.0/4.0.",
+      "Bachelor's degree in Computer Systems Analysis. Focus on software development, databases, and systems architecture.",
     achievements: [
-      "Published at SBES (Brazilian Software Engineering Symposium)",
-      "Built reference architecture adopted by 3 research centers",
-      "CNPq Master's Scholarship",
+      "Graduated December 2017",
+      "Coursework: Software Engineering, Database Systems, Web Development, Systems Architecture",
     ],
-    technologies: ["Microservices", "Kubernetes", "Python", "Go", "gRPC", "Apache Kafka", "Distributed Systems"],
+    technologies: ["Software Engineering", "Databases", "Web Development", "Systems Analysis", "Programming"],
     icon: GraduationCap,
     color: "from-indigo-500 to-purple-500",
   },
@@ -143,20 +142,17 @@ export default function Experience() {
   return (
     <section id="experience" className="py-24 sm:py-32 bg-background-elevated/30 border-y border-border-light/50">
       <div className="section-container">
-        {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 animate-fade-in-up">
           <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium mb-6">
             Journey
           </span>
           <h2 className="section-heading gradient-text mb-4">Experience & Timeline</h2>
           <p className="section-subheading">
-            From open-source contributor to AI engineering lead — building intelligent systems across healthcare, research, and national infrastructure.
+            From IT support in Brazil to AI automation at Coupa Pay in Ireland — 7+ years turning problems into scalable solutions.
           </p>
         </div>
 
-        {/* Timeline */}
         <div className="relative max-w-4xl mx-auto">
-          {/* Timeline line */}
           <div className="absolute left-4 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary via-accent to-purple-500" />
 
           {experiences.map((exp, index) => (
@@ -165,7 +161,6 @@ export default function Experience() {
               className="relative pl-16 pb-12 animate-fade-in-up"
               style={{ animationDelay: `${index * 100}ms` }}
             >
-              {/* Timeline dot */}
               <div className="absolute left-0 top-1 w-8 h-8 flex items-center justify-center">
                 <div
                   className={`relative w-3 h-3 rounded-full border-4 border-background z-10 ${exp.color.replace("from-", "bg-").replace(" to-", " bg-")}`}
@@ -173,12 +168,10 @@ export default function Experience() {
                 <div className={`absolute inset-0 rounded-full opacity-30 blur ${exp.color.replace("from-", "bg-").replace(" to-", " bg-")}`} />
               </div>
 
-              {/* Card */}
               <div
-                className={`glass-card rounded-2xl p-6 border transition-all duration-300 hover:border-primary/30 hover:shadow-xl hover:shadow-primary/10 ${expandedId === exp.id ? "ring-1 ring-primary/20" : ""}`}
+                className={`bg-background/80 backdrop-blur-xl border border-white/10 rounded-2xl p-6 border transition-all duration-300 hover:border-primary/30 hover:shadow-xl hover:shadow-primary/10 ${expandedId === exp.id ? "ring-1 ring-primary/20" : ""}`}
                 onClick={() => setExpandedId(expandedId === exp.id ? null : exp.id)}
               >
-                {/* Header */}
                 <div className="flex items-start gap-4 mb-4">
                   <div className={`flex-shrink-0 p-3 rounded-xl ${exp.color.replace("from-", "bg-").replace(" to-", "/20")} border ${exp.color.replace("from-", "border-").replace(" to-", "/30")}`}>
                     <exp.icon className={`h-5 w-5 ${exp.color.replace("from-", "text-").replace(" to-", "")}`} />
@@ -198,7 +191,6 @@ export default function Experience() {
                   </div>
                 </div>
 
-                {/* Meta */}
                 <div className="flex flex-wrap items-center gap-4 text-sm text-foreground-muted mb-4">
                   <span className="flex items-center gap-1">
                     <Calendar className="h-4 w-4" />
@@ -210,10 +202,8 @@ export default function Experience() {
                   </span>
                 </div>
 
-                {/* Description */}
                 <p className="text-foreground-muted leading-relaxed mb-4">{exp.description}</p>
 
-                {/* Achievements */}
                 <div className="space-y-2 mb-4">
                   {exp.achievements.map((achievement, i) => (
                     <div key={i} className="flex items-start gap-3 text-sm text-foreground-muted">
@@ -223,8 +213,7 @@ export default function Experience() {
                   ))}
                 </div>
 
-                {/* Technologies */}
-                <div className="flex flex-wrap gap-2 pt-4 border-t border-border-light">
+                <div className="flex flex-wrap gap-2 pt-4 border-t border-white/10">
                   {exp.technologies.map((tech) => (
                     <span
                       key={tech}
@@ -235,7 +224,6 @@ export default function Experience() {
                   ))}
                 </div>
 
-                {/* Expand indicator */}
                 <div className="mt-4 flex items-center justify-center text-foreground-muted text-sm">
                   <span className="flex items-center gap-1">
                     {expandedId === exp.id ? "Show less" : "Click to expand"}
@@ -253,7 +241,6 @@ export default function Experience() {
             </div>
           ))}
 
-          {/* Current indicator */}
           <div className="absolute left-0 top-1 w-8 h-8 flex items-center justify-center">
             <div className="relative">
               <div className="w-3 h-3 rounded-full border-4 border-background bg-primary animate-ping" />

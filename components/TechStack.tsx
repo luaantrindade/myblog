@@ -1,103 +1,98 @@
 "use client";
 
 import { useState } from "react";
-import {
-  Brain,
-  Code,
-  Server,
-  Database,
-  Cloud,
-  Shield,
-  GitBranch,
-  Dock,
-  Terminal,
-  Wind,
-  Gem,
-  Train,
-  Beaker,
-} from "lucide-react";
+import { Brain, Code, Server, Database, Cloud, Shield, GitBranch, Dock, Terminal, Wind, Gem, Train, Beaker, Cpu, Zap, FileText, Users, Globe } from "lucide-react";
 
 const categories = [
   {
-    id: "ml",
-    label: "Machine Learning / AI",
+    id: "automation",
+    label: "Automation & AI Tooling",
     icon: Brain,
     color: "from-primary to-blue-500",
     bgColor: "bg-primary/10",
     borderColor: "border-primary/20",
     textColor: "text-primary",
     skills: [
-      { name: "Python", icon: Terminal, color: "text-yellow-400" },
-      { name: "LLMs", icon: Brain, color: "text-primary" },
-      { name: "PyTorch", icon: Code, color: "text-orange-400" },
-      { name: "ROS 2", icon: GitBranch, color: "text-green-400" },
-      { name: "LangChain", icon: Database, color: "text-purple-400" },
-      { name: "Hugging Face", icon: Brain, color: "text-yellow-500" },
-      { name: "TensorFlow", icon: Code, color: "text-orange-500" },
-      { name: "OpenCV", icon: Brain, color: "text-blue-400" },
+      { name: "Slack Apps / Skills", icon: Zap, color: "text-purple-400" },
+      { name: "Gemini / LLM Integration", icon: Brain, color: "text-primary" },
+      { name: "AI-Driven Support Automation", icon: Zap, color: "text-yellow-400" },
+      { name: "API Integration", icon: Cloud, color: "text-cyan-400" },
+      { name: "Salesforce Automation", icon: FileText, color: "text-blue-500" },
+      { name: "Workflow Automation", icon: Cpu, color: "text-green-400" },
     ],
   },
   {
-    id: "web",
-    label: "Web Development",
-    icon: Code,
+    id: "troubleshooting",
+    label: "Troubleshooting & Data",
+    icon: Database,
     color: "from-emerald-500 to-teal-500",
     bgColor: "bg-emerald-500/10",
     borderColor: "border-emerald-500/20",
     textColor: "text-emerald-400",
     skills: [
-      { name: "React", icon: Code, color: "text-cyan-400" },
-      { name: "Next.js", icon: Code, color: "text-foreground" },
-      { name: "TypeScript", icon: Code, color: "text-blue-400" },
-      { name: "Node.js", icon: Server, color: "text-green-500" },
-      { name: "Ruby on Rails", icon: Train, color: "text-red-500" },
-      { name: "Tailwind CSS", icon: Wind, color: "text-cyan-400" },
-      { name: "JavaScript", icon: Code, color: "text-yellow-400" },
-      { name: "HTML/CSS", icon: Code, color: "text-orange-400" },
+      { name: "SQL for Production Troubleshooting", icon: Database, color: "text-emerald-400" },
+      { name: "Incident Response", icon: Shield, color: "text-red-400" },
+      { name: "Root Cause Analysis", icon: Brain, color: "text-amber-400" },
+      { name: "Payment Rails Debugging", icon: Cpu, color: "text-primary" },
+      { name: "API/Web Services Debugging", icon: Globe, color: "text-cyan-400" },
+      { name: "Multi-Party Escalation Management", icon: Users, color: "text-purple-400" },
     ],
   },
   {
-    id: "cloud",
-    label: "Cloud / Security / DevOps",
+    id: "observability",
+    label: "Observability & Platforms",
     icon: Server,
     color: "from-amber-500 to-orange-500",
     bgColor: "bg-amber-500/10",
     borderColor: "border-amber-500/20",
     textColor: "text-amber-400",
     skills: [
-      { name: "Docker", icon: Dock, color: "text-blue-400" },
-      { name: "Git", icon: GitBranch, color: "text-orange-500" },
-      { name: "AWS", icon: Cloud, color: "text-amber-500" },
-      { name: "Linux", icon: Server, color: "text-yellow-400" },
-      { name: "CI/CD", icon: Cloud, color: "text-green-400" },
-      { name: "Security", icon: Shield, color: "text-red-400" },
-      { name: "PostgreSQL", icon: Database, color: "text-blue-500" },
-      { name: "Redis", icon: Database, color: "text-red-500" },
+      { name: "New Relic", icon: Cpu, color: "text-red-500" },
+      { name: "Grafana", icon: Server, color: "text-orange-500" },
+      { name: "Kibana / Elasticsearch", icon: Database, color: "text-yellow-500" },
+      { name: "Salesforce (Case, Knowledge)", icon: FileText, color: "text-blue-500" },
+      { name: "JIRA", icon: FileText, color: "text-blue-400" },
+      { name: "Confluence", icon: FileText, color: "text-blue-300" },
+    ],
+  },
+  {
+    id: "dev",
+    label: "Development & Documentation",
+    icon: Code,
+    color: "from-purple-500 to-pink-500",
+    bgColor: "bg-purple-500/10",
+    borderColor: "border-purple-500/20",
+    textColor: "text-purple-400",
+    skills: [
+      { name: "Git Version Control", icon: GitBranch, color: "text-orange-500" },
+      { name: "PHP / MySQL", icon: Server, color: "text-purple-400" },
+      { name: "JavaScript / jQuery", icon: Code, color: "text-yellow-400" },
+      { name: "HTML5 / CSS3 / Bootstrap", icon: Code, color: "text-pink-400" },
+      { name: "Python / Pandas", icon: Terminal, color: "text-blue-400" },
+      { name: "ExtJS", icon: Code, color: "text-green-400" },
     ],
   },
 ];
 
 export default function TechStack() {
-  const [activeCategory, setActiveCategory] = useState("ml");
+  const [activeCategory, setActiveCategory] = useState("automation");
 
   const category = categories.find((c) => c.id === activeCategory) || categories[0];
 
   return (
     <section id="tech" className="py-24 sm:py-32 bg-background-elevated/30 border-y border-border-light/50">
       <div className="section-container">
-        {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 animate-fade-in-up">
           <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium mb-6">
             Technical Arsenal
           </span>
-          <h2 className="section-heading gradient-text mb-4">Tech Stack & Tools</h2>
+          <h2 className="section-heading gradient-text mb-4">Skills & Tools</h2>
           <p className="section-subheading">
-            A curated set of technologies I use to build intelligent, scalable, and secure products.
+            Real-world tools I use daily at Coupa Pay and beyond — from AI automation to payment rails debugging.
           </p>
         </div>
 
-        {/* Category Tabs */}
-        <div className="flex flex-wrap justify-center gap-3 mb-12 animate-fade-in-up delay-1" role="tablist" aria-label="Technology categories">
+        <div className="flex flex-wrap justify-center gap-3 mb-12 animate-fade-in-up delay-1" role="tablist" aria-label="Skill categories">
           {categories.map((cat) => (
             <button
               key={cat.id}
@@ -121,7 +116,6 @@ export default function TechStack() {
           ))}
         </div>
 
-        {/* Skills Grid */}
         <div
           id={`${activeCategory}-panel`}
           role="tabpanel"
@@ -132,23 +126,21 @@ export default function TechStack() {
             {category.skills.map((skill, index) => (
               <div
                 key={skill.name}
-                className={`group relative glass-card rounded-xl p-4 md:p-5 flex flex-col items-center gap-3 transition-all duration-300 hover:scale-105 ${category.borderColor}`}
+                className={`group relative bg-background/80 backdrop-blur-xl border border-white/10 rounded-xl p-4 md:p-5 flex flex-col items-center gap-3 transition-all duration-300 hover:scale-105 ${category.borderColor}`}
                 style={{ animationDelay: `${index * 50}ms` }}
               >
                 <div className={`relative p-3 md:p-4 rounded-xl ${category.bgColor} border ${category.borderColor} transition-all duration-300 group-hover:border-primary/30 group-hover:bg-primary/10`}>
                   <skill.icon className={`h-6 w-6 md:h-7 md:w-7 ${skill.color} transition-transform duration-300 group-hover:scale-110`} aria-hidden="true" />
                 </div>
                 <span className="text-sm md:text-base font-medium text-foreground text-center leading-tight">{skill.name}</span>
-                {/* Glow effect on hover */}
                 <div className={`absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-xl ${category.bgColor.replace("bg-", "bg-")} ${category.textColor}`} />
               </div>
             ))}
           </div>
         </div>
 
-        {/* Category description */}
         <div className="mt-10 animate-fade-in-up delay-3">
-          <div className={`glass-card rounded-2xl p-6 md:p-8 border ${category.borderColor} bg-gradient-to-r ${category.bgColor} to-transparent`}>
+          <div className={`bg-background/80 backdrop-blur-xl border border-white/10 rounded-2xl p-6 md:p-8 border ${category.borderColor} bg-gradient-to-r ${category.bgColor} to-transparent`}>
             <div className="flex items-start gap-4">
               <div className={`flex-shrink-0 p-3 rounded-xl ${category.bgColor} border ${category.borderColor}`}>
                 <category.icon className={`h-6 w-6 ${category.textColor}`} aria-hidden="true" />
@@ -156,12 +148,14 @@ export default function TechStack() {
               <div>
                 <h3 className="text-lg font-semibold text-foreground mb-2">{category.label} Focus</h3>
                 <p className="text-foreground-muted leading-relaxed">
-                  {activeCategory === "ml" &&
-                    "Deep expertise in building and deploying ML models, fine-tuning LLMs, and creating intelligent agents that solve real-world problems. From computer vision to NLP pipelines."}
-                  {activeCategory === "web" &&
-                    "Modern full-stack development with React ecosystem, type-safe TypeScript, and performant Next.js applications. Clean architecture, great DX, and delightful UX."}
-                  {activeCategory === "cloud" &&
-                    "Infrastructure as code, containerized deployments, security-first mindset, and automated pipelines. Building resilient systems that scale."}
+                  {activeCategory === "automation" &&
+                    "Built 4 production Slack/AI skills adopted org-wide at Coupa Pay. From prototype to global launch: Article Writer (397 runs, 65% time savings), Webhook Finder (~200 hrs/year saved), QuickPay extension (20% faster investigations)."}
+                  {activeCategory === "troubleshooting" &&
+                    "99.5% case closure rate across 4,600+ cases. Expert in payment rails (Citi, TransferMate), API debugging, multi-party escalations across banking partners and internal engineering teams."}
+                  {activeCategory === "observability" &&
+                    "Daily driver for production visibility: New Relic for APM, Grafana for dashboards, Kibana for log analysis. Salesforce Case/Knowledge workflow automation for support operations."}
+                  {activeCategory === "dev" &&
+                    "Full-stack background: PHP/MySQL systems, ExtJS frontends, Python data pipelines. Git workflow automation, Confluence documentation, Agile/SCRUM delivery."}
                 </p>
               </div>
             </div>

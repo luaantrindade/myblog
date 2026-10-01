@@ -8,11 +8,11 @@ export default function Footer() {
 
   const footerLinks = {
     navigate: [
-      { label: "Home", href: "#home" },
-      { label: "Work", href: "#work" },
-      { label: "Experience", href: "#experience" },
-      { label: "Blog", href: "#blog" },
-      { label: "Contact", href: "#contact" },
+      { label: "Home", href: "/" },
+      { label: "Work", href: "/work" },
+      { label: "Experience", href: "/experience" },
+      { label: "Blog", href: "/blog" },
+      { label: "Contact", href: "/contact" },
     ],
     connect: [
       { label: "GitHub", href: "https://github.com/luaantrindade", icon: GitBranch, external: true },
@@ -32,7 +32,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
           {/* Brand */}
           <div className="lg:col-span-1">
-            <Link href="#home" className="flex items-center gap-2 text-xl font-bold text-foreground mb-6" aria-label="Luan Trindade - Home">
+            <Link href="/" className="flex items-center gap-2 text-xl font-bold text-foreground mb-6" aria-label="Luan Trindade - Home">
               <span className="gradient-text">LT</span>
               <span>Luan Trindade</span>
             </Link>
@@ -55,10 +55,12 @@ export default function Footer() {
                     href={link.href}
                     className="text-foreground-muted hover:text-primary transition-colors text-sm"
                     onClick={(e) => {
+                      // For internal links that are anchors, prevent default and scroll
                       if (link.href.startsWith("#")) {
                         e.preventDefault();
                         document.querySelector(link.href)?.scrollIntoView({ behavior: "smooth" });
                       }
+                      // For absolute URLs or internal routes, let the browser/Next.js handle navigation
                     }}
                   >
                     {link.label}
@@ -80,10 +82,12 @@ export default function Footer() {
                     rel={link.external ? "noopener noreferrer" : undefined}
                     className="flex items-center gap-2 text-foreground-muted hover:text-primary transition-colors text-sm"
                     onClick={(e) => {
+                      // For internal links that are anchors, prevent default and scroll
                       if (link.href.startsWith("#")) {
                         e.preventDefault();
                         document.querySelector(link.href)?.scrollIntoView({ behavior: "smooth" });
                       }
+                      // For absolute URLs or internal routes, let the browser/Next.js handle navigation
                     }}
                   >
                     <link.icon className="h-4 w-4" />

@@ -6,11 +6,11 @@ import { useTheme } from "next-themes";
 import { Menu, X, Sun, Moon, Globe, ChevronDown, Check } from "lucide-react";
 
 const navLinks = [
-  { href: "#home", label: "Home" },
-  { href: "#work", label: "Work" },
-  { href: "#experience", label: "Experience" },
-  { href: "#blog", label: "Blog" },
-  { href: "#contact", label: "Contact" },
+  { href: "/", label: "Home" },
+  { href: "/work", label: "Work" },
+  { href: "/experience", label: "Experience" },
+  { href: "/blog", label: "Blog" },
+  { href: "/contact", label: "Contact" },
 ];
 
 const languages = [
@@ -46,11 +46,20 @@ export default function Header() {
   };
 
   const scrollToSection = (href: string) => {
+    if (href.startsWith("/")) {
+      // External link or internal route - let Next.js handle it
+      return;
+    }
+    
     const element = document.querySelector(href);
     if (element) {
       element.scrollIntoView({ behavior: "smooth", block: "start" });
       setMobileMenuOpen(false);
     }
+  };
+
+  const getChevronClassName = () => {
+    return `h-4 w-4 text-foreground-muted transition-transform ${langOpen ? "rotate-180" : ""}`;
   };
 
   if (!mounted) {
@@ -84,8 +93,11 @@ export default function Header() {
                 key={link.href}
                 href={link.href}
                 onClick={(e) => {
-                  e.preventDefault();
-                  scrollToSection(link.href);
+                  if (!link.href.startsWith("http") && !link.href.startsWith("/")) {
+                    e.preventDefault();
+                    scrollToSection(link.href);
+                  }
+                  // For absolute URLs or internal routes, let the browser/Next.js handle navigation
                 }}
                 className="relative text-sm font-medium text-foreground-muted hover:text-primary transition-colors duration-200 after:absolute after:bottom-[-4px] after:left-0 after:h-0.5 after:w-0 after:bg-primary after:transition-all hover:after:w-full"
               >
@@ -107,7 +119,7 @@ export default function Header() {
                 <Globe className="h-4 w-4 text-foreground-muted" />
                 <span>{currentLang.flag}</span>
                 <span className="hidden sm:inline">{currentLang.label}</span>
-                <ChevronDown className={`h-4 w-4 text-foreground-muted transition-transform ${langOpen ? "rotate-180" : ""}`} />
+                <ChevronDown className={getChevronClassName()} />
               </button>
 
               {langOpen && (
@@ -177,8 +189,11 @@ export default function Header() {
                 key={link.href}
                 href={link.href}
                 onClick={(e) => {
-                  e.preventDefault();
-                  scrollToSection(link.href);
+                  if (!link.href.startsWith("http") && !link.href.startsWith("/")) {
+                    e.preventDefault();
+                    scrollToSection(link.href);
+                  }
+                  // For absolute URLs or internal routes, let the browser/Next.js handle navigation
                 }}
                 className="block px-4 py-3 rounded-xl text-lg font-medium text-foreground-muted hover:text-primary hover:bg-background-elevated transition-all duration-200"
               >
