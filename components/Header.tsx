@@ -74,7 +74,7 @@ export default function Header() {
 
   return (
     <header className={headerClass}>
-      <nav className="section-container flex h-full items-center justify-between px-4 sm:px-6 lg:px-8" aria-label="Main navigation">
+      <nav className="section-container flex h-full items-center justify-between px-4 sm:px-6 lg:px-8 py-2" aria-label="Main navigation">
         {/* Logo */}
         <Link
           href="#home"

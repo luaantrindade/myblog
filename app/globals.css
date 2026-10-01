@@ -112,3 +112,11 @@ body {
 
 /* Focus */
 :focus-visible { outline: 2px solid var(--color-primary); outline-offset: 2px; }
+
+/* Dark mode overrides */
+.dark {
+  --color-background: #f8fafc;
+  --color-foreground: #0a0f1a;
+  --color-border: #e2e8f0;
+  --color-border-light: #cbd5e1;
+}
