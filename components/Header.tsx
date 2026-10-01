@@ -179,56 +179,72 @@ export default function Header() {
       {mobileMenuOpen && (
         <div
           id="mobile-menu"
-          className="md:hidden fixed inset-0 z-40 bg-background/90 backdrop-blur-xl border-t border-white/10"
+          className="md:hidden fixed inset-0 z-40 bg-background/95 backdrop-blur-xl border-t border-white/10"
           role="navigation"
           aria-label="Mobile navigation"
         >
-          <div className="px-4 py-6 space-y-4">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                onClick={(e) => {
-                  if (!link.href.startsWith("http") && !link.href.startsWith("/")) {
-                    e.preventDefault();
-                    scrollToSection(link.href);
-                  }
-                  // For absolute URLs or internal routes, let the browser/Next.js handle navigation
-                }}
-                className="block w-full px-4 py-3 rounded-xl text-lg font-medium text-foreground-muted hover:text-primary hover:bg-primary/10 transition-all duration-200"
+          <div className="flex flex-col h-full">
+            {/* Menu Header with Close Button */}
+            <div className="flex justify-between items-center px-4 py-3 border-b border-white/10">
+              <h3 className="text-lg font-semibold text-foreground">Menu</h3>
+              <button
+                onClick={() => setMobileMenuOpen(false)}
+                className="p-1 rounded-lg hover:bg-primary/10"
+                aria-label="Close menu"
               >
-                {link.label}
-              </Link>
-            ))}
-          </div>
-
-          <div className="pt-4 border-t border-white/10 flex flex-col gap-3">
-            {/* Language in mobile */}
-            <div className="flex items-center gap-3">
-              <Globe className="h-5 w-5 text-foreground-muted" />
-              <select
-                value={currentLang.code}
-                onChange={(e) => setCurrentLang(languages.find((l) => l.code === e.target.value) || languages[0])}
-                className="flex-1 px-4 py-3 rounded-xl bg-background-elevated border border-border-light text-foreground text-base appearance-none focus:border-primary focus:ring-2 focus:ring-primary/20 focus:outline-none"
-              >
-                {languages.map((lang) => (
-                  <option key={lang.code} value={lang.code}>
-                    {lang.flag} {lang.label}
-                  </option>
-                ))}
-              </select>
+                <X className="h-5 w-5 text-foreground" />
+              </button>
             </div>
 
-            {/* Theme in mobile */}
-            <button
-              onClick={toggleTheme}
-              className="flex items-center justify-between px-4 py-3 rounded-xl bg-background-elevated border border-border-light text-foreground hover:border-primary/50 transition-all duration-200"
-            >
-              <div className="flex items-center gap-3">
-                {resolvedTheme === "dark" ? <Moon className="h-5 w-5" /> : <Sun className="h-5 w-5" />}
-                <span>{resolvedTheme === "dark" ? "Dark Mode" : "Light Mode"}</span>
+            <div className="flex-1 overflow-y-auto">
+              <div className="px-4 py-4 space-y-2">
+                {navLinks.map((link) => (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    onClick={(e) => {
+                      if (!link.href.startsWith("http") && !link.href.startsWith("/")) {
+                        e.preventDefault();
+                        scrollToSection(link.href);
+                      }
+                      // For absolute URLs or internal routes, let the browser/Next.js handle navigation
+                    }}
+                    className="block w-full px-4 py-3 rounded-xl text-lg font-medium text-foreground hover:text-primary hover:bg-primary/10 transition-all duration-200"
+                  >
+                    {link.label}
+                  </Link>
+                ))}
               </div>
-            </button>
+            </div>
+
+            <div className="px-4 py-4 border-t border-white/10 flex flex-col gap-3">
+              {/* Language in mobile */}
+              <div className="flex items-center gap-3">
+                <Globe className="h-5 w-5 text-foreground-muted" />
+                <select
+                  value={currentLang.code}
+                  onChange={(e) => setCurrentLang(languages.find((l) => l.code === e.target.value) || languages[0])}
+                  className="flex-1 px-4 py-3 rounded-xl bg-background-elevated border border-border-light text-foreground text-base appearance-none focus:border-primary focus:ring-2 focus:ring-primary/20 focus:outline-none"
+                >
+                  {languages.map((lang) => (
+                    <option key={lang.code} value={lang.code}>
+                      {lang.flag} {lang.label}
+                    </option>
+                  ))}
+                </select>
+              </div>
+
+              {/* Theme in mobile */}
+              <button
+                onClick={toggleTheme}
+                className="flex items-center justify-between px-4 py-3 rounded-xl bg-background-elevated border border-border-light text-foreground hover:border-primary/50 transition-all duration-200"
+              >
+                <div className="flex items-center gap-3">
+                  {resolvedTheme === "dark" ? <Moon className="h-5 w-5" /> : <Sun className="h-5 w-5" />}
+                  <span>{resolvedTheme === "dark" ? "Dark Mode" : "Light Mode"}</span>
+                </div>
+              </button>
+            </div>
           </div>
         </div>
       )}
