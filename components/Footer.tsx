@@ -28,15 +28,15 @@ export default function Footer() {
       {/* Background glow */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[400px] h-[200px] sm:w-[600px] sm:h-[300px] bg-primary/5 rounded-full blur-3xl -translate-y-1/2" aria-hidden="true" />
 
-      <div className="section-container relative py-12 lg:py-20">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
+      <div className="section-container relative py-6 lg:py-20">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-4 lg:gap-6">
           {/* Brand */}
           <div className="lg:col-span-1">
-            <Link href="/" className="flex items-center gap-2 text-xl font-bold text-foreground mb-4" aria-label="Luan Trindade - Home">
+            <Link href="/" className="flex items-center gap-2 text-xl font-bold text-foreground mb-2" aria-label="Luan Trindade - Home">
               <span className="gradient-text">LT</span>
               <span className="hidden sm:inline">Luan Trindade</span>
             </Link>
-            <p className="text-foreground-muted leading-relaxed mb-4 max-w-xs">
+            <p className="text-foreground-muted leading-relaxed mb-2 max-w-xs">
               AI-powered support & automation specialist. Building intelligent solutions with LLMs, NLP, and smart workflows.
             </p>
             <div className="flex items-center gap-2 text-foreground-muted text-sm">
@@ -47,8 +47,8 @@ export default function Footer() {
 
           {/* Navigation */}
           <nav className="lg:col-span-1" aria-label="Site navigation">
-            <h4 className="font-semibold text-foreground mb-3">Navigate</h4>
-            <ul className="space-y-2">
+            <h4 className="font-semibold text-foreground mb-2">Navigate</h4>
+            <ul className="space-y-1">
               {footerLinks.navigate.map((link) => (
                 <li key={link.label}>
                   <Link
@@ -72,8 +72,8 @@ export default function Footer() {
 
           {/* Connect */}
           <nav className="lg:col-span-1" aria-label="Connect">
-            <h4 className="font-semibold text-foreground mb-3">Connect</h4>
-            <ul className="space-y-2">
+            <h4 className="font-semibold text-foreground mb-2">Connect</h4>
+            <ul className="space-y-1">
               {footerLinks.connect.map((link) => (
                 <li key={link.label}>
                   <a
@@ -100,9 +100,9 @@ export default function Footer() {
 
           {/* Status */}
           <div className="lg:col-span-1">
-            <h4 className="font-semibold text-foreground mb-3">Status</h4>
-            <div className="space-y-3">
-              <div className="p-4 rounded-xl bg-background border border-border-light">
+            <h4 className="font-semibold text-foreground mb-2">Status</h4>
+            <div className="space-y-2">
+              <div className="p-2 rounded-xl bg-background border border-border-light">
                 <div className="flex items-center gap-3 mb-2">
                   <div className="p-2 rounded-lg bg-primary/10">
                     <Code2 className="h-4 w-4 text-primary" />
@@ -111,7 +111,7 @@ export default function Footer() {
                 </div>
                 <p className="text-foreground-muted text-sm ml-9">5K+ stars across repositories</p>
               </div>
-              <div className="p-4 rounded-xl bg-background border border-border-light">
+              <div className="p-2 rounded-xl bg-background border border-border-light">
                 <div className="flex items-center gap-3 mb-2">
                   <div className="p-2 rounded-lg bg-accent/10">
                     <Heart className="h-4 w-4 text-accent" />
@@ -120,7 +120,7 @@ export default function Footer() {
                 </div>
                 <p className="text-foreground-muted text-sm ml-9">For freelance, contract & full-time</p>
               </div>
-              <div className="p-4 rounded-xl bg-background border border-border-light">
+              <div className="p-2 rounded-xl bg-background border border-border-light">
                 <div className="flex items-center gap-3 mb-2">
                   <div className="p-2 rounded-lg bg-emerald-500/10">
                     <MapPin className="h-4 w-4 text-emerald-400" />
@@ -134,7 +134,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-10 pt-8 border-t border-border-light flex flex-col sm:flex-row items-center justify-between gap-4 sm:gap-6">
+        <div className="mt-6 pt-4 border-t border-border-light flex flex-col sm:flex-row items-center justify-between gap-2 sm:gap-4">
           <div className="flex flex-col items-center sm:flex-row sm:justify-center">
             <p className="text-foreground-muted text-sm">
               © {currentYear} Luan Trindade. All rights reserved.
