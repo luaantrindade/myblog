@@ -117,7 +117,7 @@ export default function Header() {
             <div className="relative" role="combobox" aria-label="Select language">
               <button
                 onClick={() => setLangOpen(!langOpen)}
-                className="flex items-center gap-2 px-3 py-2 rounded-xl bg-background-elevated border border-border-light text-sm font-medium text-foreground hover:border-primary/50 transition-all duration-200"
+                className="flex items-center gap-2 px-3 py-2 rounded-xl bg-background-elevated border border-border-light text-sm font-medium text-foreground hover:border-primary/50 transition_all duration-200"
                 aria-expanded={langOpen}
                 aria-haspopup="listbox"
               >
@@ -156,7 +156,7 @@ export default function Header() {
             {/* Theme Toggle */}
             <button
               onClick={toggleTheme}
-              className="p-2.5 rounded-xl bg-background-elevated border border-border-light text-foreground-muted hover:border-primary/50 hover:text-primary hover:bg-primary/5 transition-all duration-200"
+              className="p-2.5 rounded-xl bg-background-elevated border border-border-light text-foreground-muted hover:border-primary/50 hover:text-primary hover:bg-primary/5 transition_all duration-200"
               aria-label={resolvedTheme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
             >
               {resolvedTheme === "dark" ? (
