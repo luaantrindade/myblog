@@ -150,14 +150,15 @@ export default function Header() {
 
             {/* Theme Toggle */}
             <button
+              suppressHydrationWarning
               onClick={toggleTheme}
               className="p-2.5 rounded-xl bg-background-elevated border border-border-light text-foreground-muted hover:border-primary/50 hover:text-primary hover:bg-primary/5 transition_all duration-200"
               aria-label={resolvedTheme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
             >
               {resolvedTheme === "dark" ? (
-                <Sun className="h-5 w-5" />
+                <Sun className="h-5 w-5" suppressHydrationWarning />
               ) : (
-                <Moon className="h-5 w-5" />
+                <Moon className="h-5 w-5" suppressHydrationWarning />
               )}
             </button>
           </div>
