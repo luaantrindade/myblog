@@ -29,9 +29,9 @@ export default function Footer() {
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[400px] h-[200px] sm:w-[600px] sm:h-[300px] bg-primary/5 rounded-full blur-3xl -translate-y-1/2" aria-hidden="true" />
 
       <div className="section-container relative py-4 lg:py-20">
-        <div className="grid grid-cols-1 gap-2 sm:gap-4">
+        <div className="grid grid-cols-1 gap-2 sm:gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {/* Brand */}
-          <div className="lg:col-span-1">
+          <div className="lg:col-span-1 sm:col-start-1 sm:row-start-1">
             <Link href="/" className="flex items-center gap-2 text-xl font-bold text-foreground mb-2" aria-label="Luan Trindade - Home">
               <span className="gradient-text">LT</span>
               <span className="hidden sm:inline">Luan Trindade</span>
@@ -46,7 +46,7 @@ export default function Footer() {
           </div>
 
           {/* Navigation */}
-          <nav className="lg:col-span-1" aria-label="Site navigation">
+          <nav className="lg:col-span-1 sm:col-start-1 sm:row-start-2" aria-label="Site navigation">
             <h4 className="font-semibold text-foreground mb-2">Navigate</h4>
             <ul className="space-y-1">
               {footerLinks.navigate.map((link) => (
@@ -71,7 +71,7 @@ export default function Footer() {
           </nav>
 
           {/* Connect */}
-          <nav className="lg:col-span-1" aria-label="Connect">
+          <nav className="lg:col-span-1 sm:col-start-2 sm:row-start-1" aria-label="Connect">
             <h4 className="font-semibold text-foreground mb-2">Connect</h4>
             <ul className="space-y-1">
               {footerLinks.connect.map((link) => (
@@ -99,7 +99,7 @@ export default function Footer() {
           </nav>
 
           {/* Status */}
-          <div className="lg:col-span-1">
+          <div className="lg:col-span-1 sm:col-start-2 sm:row-start-2">
             <h4 className="font-semibold text-foreground mb-2">Status</h4>
             <div className="space-y-2">
               <div className="p-2 rounded-xl bg-background border border-border-light">
