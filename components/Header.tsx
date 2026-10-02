@@ -64,8 +64,8 @@ export default function Header() {
 
   // Theme-aware overlay for mobile menu: dark overlay in light mode, light overlay in dark mode
   const mobileMenuOverlayClass = resolvedTheme === "dark"
-    ? "bg-white/50 backdrop-blur-sm" // light overlay for dark mode
-    : "bg-black/50 backdrop-blur-sm"; // dark overlay for light mode
+    ? "bg-white/60 backdrop-blur-xl" // light overlay for dark mode
+    : "bg-black/60 backdrop-blur-xl"; // dark overlay for light mode
 
   if (!mounted) {
     return (
