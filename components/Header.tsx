@@ -21,25 +21,26 @@ const languages = [
 
 export default function Header() {
   const { theme, setTheme, resolvedTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [langOpen, setLangOpen] = useState(false);
   const [currentLang, setCurrentLang] = useState(languages[0]);
 
   useEffect(() => {
-    setMounted(true);
-    const handleScroll = () => setScrolled(window.scrollY > 20);
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
+    if (typeof window !== "undefined") {
+      const handleScroll = () => setScrolled(window.scrollY > 20);
+      window.addEventListener("scroll", handleScroll, { passive: true });
+      handleScroll(); // call once to set initial state
+      return () => window.removeEventListener("scroll", handleScroll);
+    }
   }, []);
 
   useEffect(() => {
-    if (mounted && resolvedTheme) {
+    if (resolvedTheme) {
       document.documentElement.classList.remove("light", "dark");
       document.documentElement.classList.add(resolvedTheme);
     }
-  }, [mounted, resolvedTheme]);
+  }, [resolvedTheme]);
 
   const toggleTheme = () => {
     setTheme(resolvedTheme === "dark" ? "light" : "dark");
@@ -66,12 +67,6 @@ export default function Header() {
   const mobileMenuOverlayClass = resolvedTheme === "dark"
     ? "bg-black/60 backdrop-blur-xl" // dark overlay for dark mode
     : "bg-white/60 backdrop-blur-xl"; // light overlay for light mode
-
-  if (!mounted) {
-    return (
-      <header className="fixed top-0 left-0 right-0 z-50 h-16 bg-background/90 backdrop-blur-xl border-b border-white/10" />
-    );
-  }
 
   const headerClass = scrolled
     ? "fixed top-0 left-0 right-0 z-50 h-16 bg-background/90 backdrop-blur-xl border-b border-white/20 shadow-xl shadow-black/20 transition-all duration-300"
@@ -113,7 +108,7 @@ export default function Header() {
 
           {/* Language Switcher & Theme Toggle */}
           <div className="flex items-center gap-3">
-            {/* Language Switcher */ }
+            {/* Language Switcher */}
             <div className="relative" role="combobox" aria-label="Select language">
               <button
                 onClick={() => setLangOpen(!langOpen)}
