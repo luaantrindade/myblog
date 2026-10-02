@@ -28,8 +28,8 @@ export default function Footer() {
       {/* Background glow */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[400px] h-[200px] sm:w-[600px] sm:h-[300px] bg-primary/5 rounded-full blur-3xl -translate-y-1/2" aria-hidden="true" />
 
-      <div className="section-container relative py-6 lg:py-20">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-4 lg:gap-6">
+      <div className="section-container relative py-4 lg:py-20">
+        <div className="grid grid-cols-1 gap-2 sm:gap-4">
           {/* Brand */}
           <div className="lg:col-span-1">
             <Link href="/" className="flex items-center gap-2 text-xl font-bold text-foreground mb-2" aria-label="Luan Trindade - Home">
