@@ -7,4 +7,4 @@ const nextConfig: NextConfig = {
   },
 };
 
-export default nextConfig;
+export default nextConfig;// Trigger rebuild Fri Oct  2 17:07:36 UTC 2026
