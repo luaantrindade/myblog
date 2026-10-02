@@ -62,10 +62,10 @@ export default function Header() {
     return `h-4 w-4 text-foreground-muted transition-transform ${langOpen ? "rotate-180" : ""}`;
   };
 
-  // Theme-aware overlay for mobile menu: dark overlay in light mode, light overlay in dark mode
+  // Theme-aware overlay for mobile menu: light overlay in light mode, dark overlay in dark mode
   const mobileMenuOverlayClass = resolvedTheme === "dark"
-    ? "bg-white/60 backdrop-blur-xl" // light overlay for dark mode
-    : "bg-black/60 backdrop-blur-xl"; // dark overlay for light mode
+    ? "bg-black/60 backdrop-blur-xl" // dark overlay for dark mode
+    : "bg-white/60 backdrop-blur-xl"; // light overlay for light mode
 
   if (!mounted) {
     return (
@@ -113,7 +113,7 @@ export default function Header() {
 
           {/* Language Switcher & Theme Toggle */}
           <div className="flex items-center gap-3">
-            {/* Language Switcher */}
+            {/* Language Switcher */ }
             <div className="relative" role="combobox" aria-label="Select language">
               <button
                 onClick={() => setLangOpen(!langOpen)}
@@ -214,7 +214,7 @@ export default function Header() {
                       }
                       // For absolute URLs or internal routes, let the browser/Next.js handle navigation
                     }}
-                    className="block w-full px-4 py-3 rounded-xl text-lg font-medium text-foreground hover:text-primary hover:bg-primary/10 transition_all duration-200"
+                    className="block w-full px_4 py_4 rounded-xl text-lg font_medium text_foreground hover:text_primary hover:bg_primary/10 transition_all duration-200"
                   >
                     {link.label}
                   </Link>
