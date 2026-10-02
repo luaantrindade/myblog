@@ -140,7 +140,7 @@ export default function Header() {
                         setCurrentLang(lang);
                         setLangOpen(false);
                       }}
-                      className={`w-full flex items-center gap-3 px-3 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${currentLang.code === lang.code ? "bg-primary/10 text-primary border border-primary/20" : "hover:bg-background-elevated"}`}
+                      className={`w-full flex items-center gap-3 px-3 py-2 rounded-lg text-sm font-medium transition_all duration-200 ${currentLang.code === lang.code ? "bg-primary/10 text-primary border border-primary/20" : "hover:bg-background-elevated"}`}
                       role="option"
                       aria-selected={currentLang.code === lang.code}
                     >
@@ -171,7 +171,7 @@ export default function Header() {
         {/* Mobile Menu Button */}
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="md:hidden p-2.5 rounded-xl bg-background-elevated border border-border-light text-foreground hover:border-primary/50 transition-all duration-200"
+          className="md:hidden p-2.5 rounded-xl bg-background-elevated border border-border-light text-foreground hover:border-primary/50 transition_all duration-200"
           aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
           aria-expanded={mobileMenuOpen}
           aria-controls="mobile-menu"
@@ -214,7 +214,7 @@ export default function Header() {
                       }
                       // For absolute URLs or internal routes, let the browser/Next.js handle navigation
                     }}
-                    className="block w-full px-4 py-3 rounded-xl text-lg font-medium text-foreground hover:text-primary hover:bg-primary/10 transition-all duration-200"
+                    className="block w-full px-4 py-3 rounded-xl text-lg font-medium text-foreground hover:text-primary hover:bg-primary/10 transition_all duration-200"
                   >
                     {link.label}
                   </Link>
@@ -229,7 +229,7 @@ export default function Header() {
                 <select
                   value={currentLang.code}
                   onChange={(e) => setCurrentLang(languages.find((l) => l.code === e.target.value) || languages[0])}
-                  className="flex-1 px-4 py-3 rounded-xl bg-background-elevated border border-border-light text-foreground text-base appearance-none focus:border-primary focus:ring-2 focus:ring-primary/20 focus:outline-none"
+                  className="flex-1 px-4 py-3 rounded-xl bg-background-elevated border border-border-light text_foreground text_base appearance-none focus:border-primary focus:ring-2 focus:ring-primary/20 focus:outline-none"
                 >
                   {languages.map((lang) => (
                     <option key={lang.code} value={lang.code}>
@@ -242,7 +242,7 @@ export default function Header() {
               {/* Theme in mobile */}
               <button
                 onClick={toggleTheme}
-                className="flex items-center justify-between px-4 py-3 rounded-xl bg-background-elevated border border-border-light text-foreground hover:border-primary/50 transition-all duration-200"
+                className="flex items-center justify-between px-4 py-3 rounded-xl bg-background-elevated border border-border-light text_foreground hover:border-primary/50 transition_all duration-200"
               >
                 <div className="flex items-center gap-3">
                   {resolvedTheme === "dark" ? <Moon className="h-5 w-5" /> : <Sun className="h-5 w-5" />}
