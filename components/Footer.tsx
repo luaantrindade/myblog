@@ -32,7 +32,7 @@ export default function Footer() {
         {/* Layout: Brand full width, then two-column grid (Navigation | Connect), then Status full width, then Bottom bar */}
         {/* Brand full width */}
         <div className="mb-2">
-          <Link href="/" className="flex items-center gap-2 text-xl font-bold text-foreground mb-1" aria-label="Luan Trindade - Home">
+          <Link href="/" className="flex items-center gap-2 text-xl font-bold text-foreground mb-1 mt-5" aria-label="Luan Trindade - Home">
             <span className="gradient-text mr-6">LT</span>
             <span className="hidden sm:inline">Luan Trindade</span>
           </Link>
