@@ -18,7 +18,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Luan Trindade | Web Developer · ML Researcher · Entrepreneur",
+  title: "Luan Trindade | Support Engineer and AI",
   description: "AI-powered support & automation specialist. Building intelligent solutions with LLMs, NLP, and smart workflows. Based in Ireland 🇮🇪",
   keywords: ["Web Developer", "ML Researcher", "AI Engineer", "Support Engineer", "Next.js", "React", "Python", "LLMs", "NLP", "Ireland"],
   authors: [{ name: "Luan Trindade" }],
