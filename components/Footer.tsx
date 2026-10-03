@@ -29,24 +29,26 @@ export default function Footer() {
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[400px] h-[200px] sm:w-[600px] sm:h-[300px] bg-primary/5 rounded-full blur-3xl -translate-y-1/2" aria-hidden="true" />
 
       <div className="section-container relative py-4 lg:py-20">
-        <div className="grid grid-cols-1 gap-2 sm:gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {/* Brand */}
-          <div className="lg:col-span-1 sm:col-start-1 sm:row-start-1">
-            <Link href="/" className="flex items-center gap-2 text-xl font-bold text-foreground mb-2" aria-label="Luan Trindade - Home">
-              <span className="gradient-text">LT</span>
-              <span className="hidden sm:inline">Luan Trindade</span>
-            </Link>
-            <p className="text-foreground-muted leading-relaxed mb-2 max-w-xs">
-              AI-powered support & automation specialist. Building intelligent solutions with LLMs, NLP, and smart workflows.
-            </p>
-            <div className="flex items-center gap-2 text-foreground-muted text-sm">
-              <MapPin className="h-4 w-4" />
-              <span>Donabate, Dublin, Ireland 🇮🇪</span>
-            </div>
+        {/* Layout: Brand full width, then two-column grid (Navigation | Connect), then Status full width, then Bottom bar */}
+        {/* Brand full width */}
+        <div className="mb-4">
+          <Link href="/" className="flex items-center gap-2 text-xl font-bold text-foreground mb-2" aria-label="Luan Trindade - Home">
+            <span className="gradient-text">LT</span>
+            <span className="hidden sm:inline">Luan Trindade</span>
+          </Link>
+          <p className="text-foreground-muted leading-relaxed mb-2 max-w-xs">
+            AI-powered support & automation specialist. Building intelligent solutions with LLMs, NLP, and smart workflows.
+          </p>
+          <div className="flex items-center gap-2 text-foreground-muted text-sm">
+            <MapPin className="h-4 w-4" />
+            <span>Donabate, Dublin, Ireland 🇮🇪</span>
           </div>
+        </div>
 
+        {/* Two-column grid: Navigation | Connect */}
+        <div className="grid grid-cols-1 gap-2 sm:gap-4 sm:grid-cols-2">
           {/* Navigation */}
-          <nav className="lg:col-span-1 sm:col-start-1 sm:row-start-2" aria-label="Site navigation">
+          <nav className="lg:col-span-1" aria-label="Site navigation">
             <h4 className="font-semibold text-foreground mb-2">Navigate</h4>
             <ul className="space-y-1">
               {footerLinks.navigate.map((link) => (
@@ -55,12 +57,10 @@ export default function Footer() {
                     href={link.href}
                     className="text-foreground-muted hover:text-primary transition-colors text-sm block py-1"
                     onClick={(e) => {
-                      // For internal links that are anchors, prevent default and scroll
                       if (link.href.startsWith("#")) {
                         e.preventDefault();
                         document.querySelector(link.href)?.scrollIntoView({ behavior: "smooth" });
                       }
-                      // For absolute URLs or internal routes, let the browser/Next.js handle navigation
                     }}
                   >
                     {link.label}
@@ -71,7 +71,7 @@ export default function Footer() {
           </nav>
 
           {/* Connect */}
-          <nav className="lg:col-span-1 sm:col-start-2 sm:row-start-1" aria-label="Connect">
+          <nav className="lg:col-span-1" aria-label="Connect">
             <h4 className="font-semibold text-foreground mb-2">Connect</h4>
             <ul className="space-y-1">
               {footerLinks.connect.map((link) => (
@@ -82,12 +82,10 @@ export default function Footer() {
                     rel={link.external ? "noopener noreferrer" : undefined}
                     className="flex items-center gap-2 text-foreground-muted hover:text-primary transition-colors text-sm block py-1"
                     onClick={(e) => {
-                      // For internal links that are anchors, prevent default and scroll
                       if (link.href.startsWith("#")) {
                         e.preventDefault();
                         document.querySelector(link.href)?.scrollIntoView({ behavior: "smooth" });
                       }
-                      // For absolute URLs or internal routes, let the browser/Next.js handle navigation
                     }}
                   >
                     <link.icon className="h-4 w-4" />
@@ -97,38 +95,38 @@ export default function Footer() {
               ))}
             </ul>
           </nav>
+        </div>
 
-          {/* Status */}
-          <div className="lg:col-span-1 sm:col-start-2 sm:row-start-2">
-            <h4 className="font-semibold text-foreground mb-2">Status</h4>
-            <div className="space-y-2">
-              <div className="p-2 rounded-xl bg-background border border-border-light">
-                <div className="flex items-center gap-3 mb-2">
-                  <div className="p-2 rounded-lg bg-primary/10">
-                    <Code2 className="h-4 w-4 text-primary" />
-                  </div>
-                  <span className="font-medium text-foreground">Open Source</span>
+        {/* Status full width */}
+        <div className="mt-4">
+          <h4 className="font-semibold text-foreground mb-2">Status</h4>
+          <div className="space-y-2">
+            <div className="p-2 rounded-xl bg-background border border-border-light">
+              <div className="flex items-center gap-3 mb-2">
+                <div className="p-2 rounded-lg bg-primary/10">
+                  <Code2 className="h-4 w-4 text-primary" />
                 </div>
-                <p className="text-foreground-muted text-sm ml-9">5K+ stars across repositories</p>
+                <span className="font-medium text-foreground">Open Source</span>
               </div>
-              <div className="p-2 rounded-xl bg-background border border-border-light">
-                <div className="flex items-center gap-3 mb-2">
-                  <div className="p-2 rounded-lg bg-accent/10">
-                    <Heart className="h-4 w-4 text-accent" />
-                  </div>
-                  <span className="font-medium text-foreground">Available</span>
+              <p className="text-foreground-muted text-sm ml-9">5K+ stars across repositories</p>
+            </div>
+            <div className="p-2 rounded-xl bg-background border border-border-light">
+              <div className="flex items-center gap-3 mb-2">
+                <div className="p-2 rounded-lg bg-accent/10">
+                  <Heart className="h-4 w-4 text-accent" />
                 </div>
-                <p className="text-foreground-muted text-sm ml-9">For freelance, contract & full-time</p>
+                <span className="font-medium text-foreground">Available</span>
               </div>
-              <div className="p-2 rounded-xl bg-background border border-border-light">
-                <div className="flex items-center gap-3 mb-2">
-                  <div className="p-2 rounded-lg bg-emerald-500/10">
-                    <MapPin className="h-4 w-4 text-emerald-400" />
-                  </div>
-                  <span className="font-medium text-foreground">Location</span>
+              <p className="text-foreground-muted text-sm ml-9">For freelance, contract & full-time</p>
+            </div>
+            <div className="p-2 rounded-xl bg-background border border-border-light">
+              <div className="flex items-center gap-3 mb-2">
+                <div className="p-2 rounded-lg bg-emerald-500/10">
+                  <MapPin className="h-4 w-4 text-emerald-400" />
                 </div>
-                <p className="text-foreground-muted text-sm ml-9">Dublin, Ireland 🇮🇪 (GMT/IST)</p>
+                <span className="font-medium text-foreground">Location</span>
               </div>
+              <p className="text-foreground-muted text-sm ml-9">Dublin, Ireland 🇮🇪 (GMT/IST)</p>
             </div>
           </div>
         </div>
