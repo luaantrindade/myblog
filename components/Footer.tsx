@@ -98,7 +98,7 @@ export default function Footer() {
         </div>
 
         {/* Status full width */}
-        <div className="mt-2">
+        <div className="mt-2 hidden sm:block">
           <h4 className="font-semibold text-foreground mb-1">Status</h4>
           <div className="space-y-1">
             <div className="p-1 rounded-xl bg-background border border-border-light">
