@@ -33,7 +33,7 @@ export default function Footer() {
         {/* Brand full width */}
         <div className="mb-2">
           <Link href="/" className="flex items-center gap-2 text-xl font-bold text-foreground mb-1" aria-label="Luan Trindade - Home">
-            <span className="gradient-text mr-4">LT</span>
+            <span className="gradient-text mr-6">LT</span>
             <span className="hidden sm:inline">Luan Trindade</span>
           </Link>
           <p className="text-foreground-muted leading-relaxed mb-1 max-w-xs">
