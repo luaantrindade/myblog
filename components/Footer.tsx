@@ -46,7 +46,7 @@ export default function Footer() {
         </div>
 
         {/* Two-column grid: Navigation | Connect */}
-        <div className="grid grid-cols-1 gap-2 sm:gap-4 sm:grid-cols-2">
+        <div className="grid grid-cols-2 gap-2 sm:gap-4">
           {/* Navigation */}
           <nav className="lg:col-span-1" aria-label="Site navigation">
             <h4 className="font-semibold text-foreground mb-2">Navigate</h4>
