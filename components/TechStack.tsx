@@ -132,7 +132,7 @@ export default function TechStack() {
                 <div className={`relative p-3 md:p-4 rounded-xl ${category.bgColor} border ${category.borderColor} transition-all duration-300 group-hover:border-primary/30 group-hover:bg-primary/10`}>
                   <skill.icon className={`h-6 w-6 md:h-7 md:w-7 ${skill.color} transition-transform duration-300 group-hover:scale-110`} aria-hidden="true" />
                 </div>
-                <span className="text-sm md:text-base font-medium text-foreground text-center leading-tight">{skill.name}</span>
+                <span className="text-sm md:text-base font-medium text-foreground/90 text-center leading-tight">{skill.name}</span>
                 <div className={`absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-xl ${category.bgColor.replace("bg-", "bg-")} ${category.textColor}`} />
               </div>
             ))}
