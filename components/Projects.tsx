@@ -266,6 +266,7 @@ export default function Projects() {
                       src={selectedProject.image}
                       alt={selectedProject.title}
                       className="rounded-xl w-full aspect-video object-cover"
+                      loading="lazy"
                     />
                   </div>
                   <div className="md:w-1/2 flex flex-col">
