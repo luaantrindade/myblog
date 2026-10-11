@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import Head from "next/head";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
@@ -69,6 +70,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <Head>
+        <link rel="icon" href="/globe.svg" />
+        <link rel="apple-touch-icon" href="/globe.svg" />
+      </Head>
       <body className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased`}>
         {/* Skip to content link */}
         <a href="#main-content" className="skip-link">
