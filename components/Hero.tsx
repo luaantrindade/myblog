@@ -54,7 +54,7 @@ export default function Hero() {
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-float" />
         <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent/10 rounded-full blur-3xl animate-float" style={{ animationDelay: "3s" }} />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-primary/5 rounded-full blur-3xl" />
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width=%2260%22 height=%2260%22 viewBox=%220 0 60 60%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cg fill=%22none%22 fill-rule=%22evenodd%22%3E%3Cg fill=%22%2300d4ff%22 fill-opacity=%220.03%22%3E%3Cpath d=%22M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-50" />
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width=%2260%22 height=%2260%22 viewBox=%220 0 60 60%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cg fill=%22none%22 fill-rule=%22evenodd%22%3E%3Cg fill=%22%2300d4ff%22 fill-opacity=%220.03%22%3E%3Cpath d=%22M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z%22/%3E%3C/g%3E%3C/svg%3E')] opacity-50" />
         <div className="absolute inset-0 bg-[linear-gradient(to_bottom,transparent_50%,rgba(0,0,0,0.03)_50%)] bg-[size:100%_4px]" />
       </div>
 
@@ -77,16 +77,10 @@ export default function Hero() {
               <span className="gradient-text">Luan Trindade</span>
             </h1>
 
-            <div className="animate-fade-in-up delay-2 mb-8 min-h-[2.5rem]">
-              <p className="text-xl sm:text-2xl text-foreground-muted font-medium">
-                <span className="gradient-text" ref={typedTextRef}>{displayedText}</span>
-                <span className="relative" aria-hidden="true">
-                  {showCursor && !isDeleting && (
-                    <span className="inline-block w-1 h-8 bg-primary animate-pulse ml-1 align-bottom" />
-                  )}
-                </span>
-              </p>
-            </div>
+            {/* Replace animated typing with static tagline */}
+            <p className="text-xl sm:text-2xl text-foreground-muted font-medium animate-fade-in-up delay-2 mb-8 min-h-[2.5rem]">
+              Technical Support Engineer with 7+ years in Cloud SaaS & Fintech.
+            </p>
 
             <p className="text-lg sm:text-xl text-foreground-muted leading-relaxed max-w-xl animate-fade-in-up delay-3 mb-10">
               Technical Support Engineer with 7+ years in Cloud SaaS & Fintech. Building AI-driven support automation 
