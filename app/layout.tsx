@@ -70,6 +70,10 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased`}>
+        {/* Skip to content link */}
+        <a href="#main-content" className="skip-link">
+          Skip to main content
+        </a>
         <ThemeProviderWrapper>
           <Header />
           <main id="main-content">{children}</main>
