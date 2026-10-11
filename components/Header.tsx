@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { useTheme } from "next-themes";
-import { Menu, X, Sun, Moon, Globe, ChevronDown, Check } from "lucide-react";
+import { Menu, X, Sun, Moon } from "lucide-react";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -13,18 +13,10 @@ const navLinks = [
   { href: "/contact", label: "Contact" },
 ];
 
-const languages = [
-  { code: "en", label: "English", flag: "🇮🇪" },
-  { code: "es", label: "Español", flag: "🇪🇸" },
-  { code: "pt", label: "Português", flag: "🇧🇷" },
-];
-
 export default function Header() {
   const { theme, setTheme, resolvedTheme } = useTheme();
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [langOpen, setLangOpen] = useState(false);
-  const [currentLang, setCurrentLang] = useState(languages[0]);
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -58,15 +50,6 @@ export default function Header() {
       setMobileMenuOpen(false);
     }
   };
-
-  const getChevronClassName = () => {
-    return `h-4 w-4 text-foreground-muted transition-transform ${langOpen ? "rotate-180" : ""}`;
-  };
-
-  // Theme-aware overlay for mobile menu: light overlay in light mode, dark overlay in dark mode
-  const mobileMenuOverlayClass = resolvedTheme === "dark"
-    ? "bg-black/60 backdrop-blur-xl" // dark overlay for dark mode
-    : "bg-white/60 backdrop-blur-xl"; // light overlay for light mode
 
   const headerClass = scrolled
     ? "fixed top-0 left-0 right-0 z-50 h-16 bg-background/90 backdrop-blur-xl border-b border-white/20 shadow-xl shadow-black/20 transition-all duration-300"
@@ -106,49 +89,8 @@ export default function Header() {
             ))}
           </div>
 
-          {/* Language Switcher & Theme Toggle */}
-          <div className="flex items-center gap-3">
-            {/* Language Switcher */}
-            <div className="relative" role="combobox" aria-label="Select language">
-              <button
-                onClick={() => setLangOpen(!langOpen)}
-                className="flex items-center gap-2 px-3 py-2 rounded-xl bg-background-elevated border border-border-light text-sm font-medium text-foreground hover:border-primary/50 transition_all duration-200"
-                aria-expanded={langOpen}
-                aria-haspopup="listbox"
-              >
-                <Globe className="h-4 w-4 text-foreground-muted" />
-                <span>{currentLang.flag}</span>
-                <span className="hidden sm:inline">{currentLang.label}</span>
-                <ChevronDown className={getChevronClassName()} />
-              </button>
-
-              {langOpen && (
-                <div
-                  className="absolute right-0 mt-2 w-40 bg-background/80 backdrop-blur-xl border border-white/10 rounded-xl border-white/20 py-2 shadow-2xl animate-fade-in"
-                  role="listbox"
-                  aria-label="Languages"
-                >
-                  {languages.map((lang) => (
-                    <button
-                      key={lang.code}
-                      onClick={() => {
-                        setCurrentLang(lang);
-                        setLangOpen(false);
-                      }}
-                      className={`w-full flex items-center gap-3 px-3 py-2 rounded-lg text-sm font-medium transition_all duration-200 ${currentLang.code === lang.code ? "bg-primary/10 text-primary border border-primary/20" : "hover:bg-background-elevated"}`}
-                      role="option"
-                      aria-selected={currentLang.code === lang.code}
-                    >
-                      <span>{lang.flag}</span>
-                      <span>{lang.label}</span>
-                      {currentLang.code === lang.code && <Check className="h-4 w-4 text-primary ml-auto" />}
-                    </button>
-                  ))}
-                </div>
-              )}
-            </div>
-
-            {/* Theme Toggle */}
+          {/* Theme Toggle */}
+          <div className="flex items-center">
             <button
               suppressHydrationWarning
               onClick={toggleTheme}
@@ -219,22 +161,6 @@ export default function Header() {
             </div>
 
             <div className="px-4 py-4 border-t border-white/10 flex flex-col gap-3">
-              {/* Language in mobile */}
-              <div className="flex items-center gap-3">
-                <Globe className="h-5 w-5 text-foreground-muted" />
-                <select
-                  value={currentLang.code}
-                  onChange={(e) => setCurrentLang(languages.find((l) => l.code === e.target.value) || languages[0])}
-                  className="flex-1 px-4 py-3 rounded-xl bg-background-elevated border border-border-light text_foreground text_base appearance-none focus:border-primary focus:ring-2 focus:ring-primary/20 focus:outline-none"
-                >
-                  {languages.map((lang) => (
-                    <option key={lang.code} value={lang.code}>
-                      {lang.flag} {lang.label}
-                    </option>
-                  ))}
-                </select>
-              </div>
-
               {/* Theme in mobile */}
               <button
                 onClick={toggleTheme}
@@ -248,7 +174,7 @@ export default function Header() {
             </div>
           </div>
           {/* Background overlay and backdrop blur - theme aware */}
-          <div className={`absolute inset-0 -z-10 ${mobileMenuOverlayClass}`} />
+          <div className={`absolute inset-0 -z-10 ${resolvedTheme === "dark" ? "bg-black/60 backdrop-blur-xl" : "bg-white/60 backdrop-blur-xl"}`} />
         </div>
       )}
 
