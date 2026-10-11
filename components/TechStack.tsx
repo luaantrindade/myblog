@@ -77,8 +77,6 @@ const categories = [
 export default function TechStack() {
   const [activeCategory, setActiveCategory] = useState("automation");
 
-  const category = categories.find((c) => c.id === activeCategory) || categories[0];
-
   return (
     <section id="tech" className="py-24 sm:py-32 bg-background-elevated/30 border-y border-border-light/50">
       <div className="section-container">
@@ -116,37 +114,48 @@ export default function TechStack() {
           ))}
         </div>
 
-        <div
-          id={`${activeCategory}-panel`}
-          role="tabpanel"
-          aria-labelledby={`${activeCategory}-tab`}
-          className="animate-fade-in-up delay-2"
-        >
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3 md:gap-4">
-            {category.skills.map((skill, index) => (
-              <div
-                key={skill.name}
-                className={`group relative bg-background/80 backdrop-blur-xl border border-white/10 rounded-xl p-4 md:p-5 flex flex-col items-center gap-3 transition-all duration-300 hover:scale-105 ${category.borderColor}`}
-                style={{ animationDelay: `${index * 50}ms` }}
-              >
-                <div className={`relative p-3 md:p-4 rounded-xl ${category.bgColor} border ${category.borderColor} transition-all duration-300 group-hover:border-primary/30 group-hover:bg-primary/10`}>
-                  <skill.icon className={`h-6 w-6 md:h-7 md:w-7 ${skill.color} transition-transform duration-300 group-hover:scale-110`} aria-hidden="true" />
+        {categories.map((cat) => (
+          <div
+            key={cat.id}
+            id={`${cat.id}-panel`}
+            role="tabpanel"
+            aria-labelledby={`${cat.id}-tab`}
+            className={`
+              animate-fade-in-up delay-2
+              ${activeCategory === cat.id ? "" : "hidden"}
+            `}
+          >
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3 md:gap-4">
+              {category.skills.map((skill, index) => (
+                <div
+                  key={skill.name}
+                  className={`group relative bg-background/80 backdrop-blur-xl border border-white/10 rounded-xl p-4 md:p-5 flex flex-col items-center gap-3 transition-all duration-300 hover:scale-105 ${cat.borderColor}`}
+                  style={{ animationDelay: `${index * 50}ms` }}
+                >
+                  <div className={`relative p-3 md:p-4 rounded-xl ${cat.bgColor} border ${cat.borderColor} transition-all duration-300 group-hover:border-primary/30 group-hover:bg-primary/10`}>
+                    <skill.icon className={`h-6 w-6 md:h-7 md:w-7 ${skill.color} transition-transform duration-300 group-hover:scale-110`} aria-hidden="true" />
+                  </div>
+                  <span className="text-sm md:text-base font-medium text-foreground/90 text-center leading-tight">{skill.name}</span>
+                  <div className={`absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-xl ${cat.bgColor.replace("bg-", "bg-")} ${cat.textColor}`} />
                 </div>
-                <span className="text-sm md:text-base font-medium text-foreground/90 text-center leading-tight">{skill.name}</span>
-                <div className={`absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-xl ${category.bgColor.replace("bg-", "bg-")} ${category.textColor}`} />
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-        </div>
+        ))}
 
         <div className="mt-10 animate-fade-in-up delay-3">
-          <div className={`bg-background/80 backdrop-blur-xl border border-white/10 rounded-2xl p-6 md:p-8 border ${category.borderColor} bg-gradient-to-r ${category.bgColor} to-transparent`}>
+          <div className={`bg-background/80 backdrop-blur-xl border border-white/10 rounded-2xl p-6 md:p-8 border ${activeCategory === "automation" ? categories[0].borderColor : activeCategory === "troubleshooting" ? categories[1].borderColor : activeCategory === "observability" ? categories[2].borderColor : categories[3].borderColor} bg-gradient-to-r ${activeCategory === "automation" ? categories[0].bgColor : activeCategory === "troubleshooting" ? categories[1].bgColor : activeCategory === "observability" ? categories[2].bgColor : categories[3].bgColor} to-transparent`}>
             <div className="flex items-start gap-4">
-              <div className={`flex-shrink-0 p-3 rounded-xl ${category.bgColor} border ${category.borderColor}`}>
-                <category.icon className={`h-6 w-6 ${category.textColor}`} aria-hidden="true" />
+              <div className={`flex-shrink-0 p-3 rounded-xl ${activeCategory === "automation" ? categories[0].bgColor : activeCategory === "troubleshooting" ? categories[1].bgColor : activeCategory === "observability" ? categories[2].bgColor : categories[3].bgColor} border ${activeCategory === "automation" ? categories[0].borderColor : activeCategory === "troubleshooting" ? categories[1].borderColor : activeCategory === "observability" ? categories[2].borderColor : categories[3].borderColor}`}>
+                {activeCategory === "automation" ? <Brain /> : activeCategory === "troubleshooting" ? <Database /> : activeCategory === "observability" ? <Server /> : <Code />}
               </div>
               <div>
-                <h3 className="text-lg font-semibold text-foreground mb-2">{category.label} Focus</h3>
+                <h3 className="text-lg font-semibold text-foreground mb-2">
+                  {activeCategory === "automation" && "Automation & AI Tooling Focus"}
+                  {activeCategory === "troubleshooting" && "Troubleshooting & Data Focus"}
+                  {activeCategory === "observability" && "Observability & Platforms Focus"}
+                  {activeCategory === "dev" && "Development & Documentation Focus"}
+                </h3>
                 <p className="text-foreground-muted leading-relaxed">
                   {activeCategory === "automation" &&
                     "Built 4 production Slack/AI skills adopted org-wide at Coupa Pay. From prototype to global launch: Article Writer (397 runs, 65% time savings), Webhook Finder (~200 hrs/year saved), QuickPay extension (20% faster investigations)."}
