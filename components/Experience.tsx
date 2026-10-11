@@ -168,10 +168,11 @@ export default function Experience() {
                 <div className={`absolute inset-0 rounded-full opacity-30 blur ${exp.color.replace("from-", "bg-").replace(" to-", " bg-")}`} />
               </div>
 
-              <div
-                className={`bg-background/80 backdrop-blur-xl border border-white/10 rounded-2xl p-6 border transition-all duration-300 hover:border-primary/30 hover:shadow-xl hover:shadow-primary/10 ${expandedId === exp.id ? "ring-1 ring-primary/20" : ""}`}
-                onClick={() => setExpandedId(expandedId === exp.id ? null : exp.id)}
-              >
+              <button
+  className={`bg-background/80 backdrop-blur-xl border border-white/10 rounded-2xl p-6 border transition-all duration-300 hover:border-primary/30 hover:shadow-xl hover:shadow-primary/10 ${expandedId === exp.id ? "ring-1 ring-primary/20" : ""}`}
+  onClick={() => setExpandedId(expandedId === exp.id ? null : exp.id)}
+  aria-expanded={expandedId === exp.id}
+>
                 <div className="flex items-start gap-4 mb-4">
                   <div className={`flex-shrink-0 p-3 rounded-xl ${exp.color.replace("from-", "bg-").replace(" to-", "/20")} border ${exp.color.replace("from-", "border-").replace(" to-", "/30")}`}>
                     <exp.icon className={`h-5 w-5 ${exp.color.replace("from-", "text-").replace(" to-", "")}`} />
@@ -237,7 +238,7 @@ export default function Experience() {
                     </svg>
                   </span>
                 </div>
-              </div>
+</button>
             </div>
           ))}
 
