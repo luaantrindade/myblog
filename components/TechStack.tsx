@@ -97,7 +97,7 @@ export default function TechStack() {
               onClick={() => setActiveCategory(cat.id)}
               className={`relative px-6 py-3 rounded-xl font-medium text-sm transition-all duration-300 ${
                 activeCategory === cat.id
-                  ? "bg-gradient-to-r text-background font-semibold shadow-lg shadow-primary/25"
+                  ? "bg-gradient-to-r text-foreground-muted font-semibold shadow-lg shadow-primary/25"
                   : "bg-background-elevated border border-border-light text-foreground-muted hover:border-primary/50 hover:text-foreground hover:bg-primary/5"
               }`}
               role="tab"
@@ -105,7 +105,7 @@ export default function TechStack() {
               aria-controls={`${cat.id}-panel`}
               id={`${cat.id}-tab`}
             >
-              <cat.icon className={`inline h-4 w-4 mr-2 ${activeCategory === cat.id ? "text-background" : cat.textColor}`} />
+              <cat.icon className={`inline h-4 w-4 mr-2 ${activeCategory === cat.id ? "text-foreground-muted" : cat.textColor}`} />
               {cat.label}
               {activeCategory === cat.id && (
                 <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-2 h-2 bg-background rounded-full" />
