@@ -1,19 +1,23 @@
+import Link from "next/link";
+
 export const metadata = {
-  title: "Building Production Slack AI Skills: Lessons from 397 Deployments | Luan Trindade",
+  title: "Building production Slack AI skills",
   description: "A deep dive into creating and scaling AI-powered Slack skills that saved organizations hundreds of hours annually.",
   keywords: ["Slack", "AI", "Automation", "Workflow", "LLMs", "NLP"],
+  alternates: { canonical: "/blog/slack-ai-skills" },
 };
 
 export default function BlogPost() {
   return (
-    <section className="py-24 sm:py-32">
-      <div className="section-container">
-        <div className="max-w-4xl mx-auto animate-fade-in-up">
-          <header className="mb-12">
+    <section className="article-page">
+      <div className="article-container">
+        <div className="article-inner">
+          <header className="article-header">
+            <p className="article-category">Automation</p>
             <h1 className="text-4xl sm:text-5xl font-bold tracking-tight mb-6">
               Building Production Slack AI Skills: Lessons from 397 Deployments
             </h1>
-            <div className="flex flex-col sm:flex-row gap-4 text-sm text-foreground-muted mb-8">
+            <div className="article-meta">
               <span>Feb 3, 2026</span>
               <span>•</span>
               <span>12 min read</span>
@@ -25,7 +29,7 @@ export default function BlogPost() {
             </div>
           </header>
           
-          <div className="space-y-8">
+          <div className="article-body">
             <section className="mb-10">
               <h2 className="text-2xl font-bold mb-4">The Slack AI Skills Journey</h2>
               <p>
@@ -196,12 +200,12 @@ export default function BlogPost() {
             </section>
           </div>
           
-          <footer className="border-t pt-8 mt-12">
+          <footer className="article-footer">
             <p className="text-sm text-foreground-muted">
               Building these Slack AI skills has been one of the most rewarding projects of my career— 
               not just for the time savings, but for seeing how technology can genuinely augment human 
               capabilities rather than replace them. If you're interested in implementing similar 
-              solutions in your organization, <a href="#contact" className="text-primary hover:underline">let's connect</a> to discuss approaches tailored to your specific needs.
+              solutions in your organization, <Link href="/#contact" className="text-primary hover:underline">let&apos;s connect</Link> to discuss approaches tailored to your specific needs.
             </p>
           </footer>
         </div>

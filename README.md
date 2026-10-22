@@ -1,39 +1,57 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Luan Trindade — Personal site
+
+A personal blog and portfolio about practical AI, support engineering,
+automation, and building useful systems. Built with Next.js and designed with
+an editorial-minimalist direction inspired by OpenDesign's
+`web-prototype-taste-editorial` and `blog-post` templates.
 
 ## Getting Started
 
-First, run the development server:
+Install dependencies and start the local development server:
 
 ```bash
+npm ci
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000). The main page is in
+`app/page.tsx`; shared article metadata lives in `lib/posts.ts`, and individual
+articles are under `app/blog/`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+The production build exports a static site to `out/`, including
+`sitemap.xml` and `robots.txt`.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Deploying to Hostinger
 
-## Learn More
+Hostinger is configured to deploy this site when changes are pushed to `main`.
+In VS Code, open **Terminal → Run Task → Deploy to Hostinger** (or run the
+`Deploy to Hostinger` task from the Command Palette). The task asks for a commit
+message, runs `npm run build` and `npm run lint`, stages and commits changes,
+then pushes to `origin/main`. It stops if the checks fail, the current branch
+is not `main`, or `origin` is not `luaantrindade/myblog`.
 
-To learn more about Next.js, take a look at the following resources:
+The task confirms when GitHub accepts the push, but it cannot read Hostinger's
+deployment status. Check the deployment log in [Hostinger hPanel](https://hpanel.hostinger.com/).
+You can also use VS Code's built-in Source Control panel to stage, commit, and
+push manually.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Keep production environment variables in Hostinger's website settings; never
+commit them to GitHub. `.env*` files are ignored by this repository. For local
+development, create an untracked `.env.local` with the values your app needs.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+To bind a keyboard shortcut, open **Preferences: Open Keyboard Shortcuts
+(JSON)** in VS Code and add:
 
-## Deploy on Vercel
+```json
+{
+  "key": "cmd+shift+d",
+  "command": "workbench.action.tasks.runTask",
+  "args": "Deploy to Hostinger"
+}
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The recommended extensions are ESLint (`dbaeumer.vscode-eslint`) and GitHub
+Actions (`github.vscode-github-actions`). Git integration is built into VS Code.
 # Trigger rebuild Fri Oct  2 17:02:25 UTC 2026
 # Trigger rebuild
 # Footer UX fix - removed test text

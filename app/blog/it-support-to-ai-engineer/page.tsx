@@ -1,19 +1,21 @@
 export const metadata = {
-  title: "From IT Support to AI Engineer: A Career Path Framework | Luan Trindade",
+  title: "From IT support to AI engineer",
   description: "Practical steps for technical professionals looking to transition into AI and automation roles while building on their foundation.",
   keywords: ["Career Growth", "AI Engineer", "IT Support", "Professional Development", "Skills"],
+  alternates: { canonical: "/blog/it-support-to-ai-engineer" },
 };
 
 export default function BlogPost() {
   return (
-    <section className="py-24 sm:py-32">
-      <div className="section-container">
-        <div className="max-w-4xl mx-auto animate-fade-in-up">
-          <header className="mb-12">
+    <section className="article-page">
+      <div className="article-container">
+        <div className="article-inner">
+          <header className="article-header">
+            <p className="article-category">Career notes</p>
             <h1 className="text-4xl sm:text-5xl font-bold tracking-tight mb-6">
               From IT Support to AI Engineer: A Career Path Framework
             </h1>
-            <div className="flex flex-col sm:flex-row gap-4 text-sm text-foreground-muted mb-8">
+            <div className="article-meta">
               <span>Jan 22, 2026</span>
               <span>•</span>
               <span>10 min read</span>
@@ -25,7 +27,7 @@ export default function BlogPost() {
             </div>
           </header>
           
-          <div className="space-y-8">
+          <div className="article-body">
             <section className="mb-10">
               <h2 className="text-2xl font-bold mb-4">The Foundation Years: Building Core Technical Skills</h2>
               <p>
@@ -205,7 +207,7 @@ export default function BlogPost() {
             </section>
           </div>
           
-          <footer className="border-t pt-8 mt-12">
+          <footer className="article-footer">
             <p className="text-sm text-foreground-muted">
               The journey from IT support to AI engineering isn't about leaving your past behind—it's 
               about building upon it. Every troubleshooting session, every difficult customer conversation, 

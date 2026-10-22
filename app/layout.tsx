@@ -1,10 +1,8 @@
 import type { Metadata, Viewport } from "next";
-import Head from "next/head";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { ThemeProviderWrapper } from "./theme-provider";
 
 const geistSans = Geist({
   subsets: ["latin"],
@@ -19,48 +17,38 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Luan Trindade | Support Engineer and AI",
-  description: "AI-powered support & automation specialist. Building intelligent solutions with LLMs, NLP, and smart workflows. Based in Ireland 🇮🇪",
-  keywords: ["Web Developer", "ML Researcher", "AI Engineer", "Support Engineer", "Next.js", "React", "Python", "LLMs", "NLP", "Ireland"],
+  metadataBase: new URL("https://luantrindade.com"),
+  title: {
+    default: "Luan Trindade — Field notes on AI, support & systems",
+    template: "%s — Luan Trindade",
+  },
+  description:
+    "Field notes on practical AI, support engineering, automation, and building useful systems. Written by Luan Trindade in Ireland.",
+  keywords: ["AI", "Support Engineering", "Automation", "Cloud SaaS", "Ireland"],
   authors: [{ name: "Luan Trindade" }],
   creator: "Luan Trindade",
   publisher: "Luan Trindade",
-  robots: "index, follow",
+  alternates: { canonical: "/" },
   openGraph: {
     type: "website",
     locale: "en_IE",
-    url: "https://luantrindade.com",
     siteName: "Luan Trindade",
-    title: "Luan Trindade | Web Developer · ML Researcher · Entrepreneur",
-    description: "AI-powered support & automation specialist. Building intelligent solutions with LLMs, NLP, and smart workflows.",
-    images: [
-      {
-        url: "/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "Luan Trindade - Portfolio",
-      },
-    ],
+    title: "Luan Trindade — Field notes on AI, support & systems",
+    description: "Writing about practical AI, support engineering, automation, and building useful systems.",
+    url: "/",
   },
   twitter: {
-    card: "summary_large_image",
-    title: "Luan Trindade | Web Developer · ML Researcher",
-    description: "AI-powered support & automation specialist. Building intelligent solutions with LLMs, NLP, and smart workflows.",
-    images: ["/og-image.png"],
+    card: "summary",
+    title: "Luan Trindade — Field notes on AI, support & systems",
+    description: "Writing about practical AI, support engineering, automation, and building useful systems.",
   },
-  verification: {
-    google: "google-site-verification-code",
-  },
+  icons: { icon: "/favicon.ico" },
 };
 
 export const viewport: Viewport = {
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
-    { media: "(prefers-color-scheme: dark)", color: "#0a0f1a" },
-  ],
+  themeColor: "#f7f6f3",
   width: "device-width",
   initialScale: 1,
-  maximumScale: 5,
 };
 
 export default function RootLayout({
@@ -69,21 +57,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <Head>
-        <link rel="icon" href="/globe.svg" />
-        <link rel="apple-touch-icon" href="/globe.svg" />
-      </Head>
-      <body className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased`}>
-        {/* Skip to content link */}
+    <html lang="en">
+      <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <a href="#main-content" className="skip-link">
           Skip to main content
         </a>
-        <ThemeProviderWrapper>
-          <Header />
-          <main id="main-content">{children}</main>
-          <Footer />
-        </ThemeProviderWrapper>
+        <Header />
+        <main id="main-content">{children}</main>
+        <Footer />
       </body>
     </html>
   );

@@ -1,19 +1,23 @@
+import Link from "next/link";
+
 export const metadata = {
-  title: "How AI is Transforming Technical Support: A 7-Year Perspective | Luan Trindade",
+  title: "How AI is transforming technical support",
   description: "From ticket triage to predictive maintenance, learn how AI is reshaping the support landscape and what it means for engineers and organizations.",
   keywords: ["AI", "Technical Support", "Automation", "Customer Service", "LLMs", "NLP"],
+  alternates: { canonical: "/blog/ai-automation-support" },
 };
 
 export default function BlogPost() {
   return (
-    <section className="py-24 sm:py-32">
-      <div className="section-container">
-        <div className="max-w-4xl mx-auto animate-fade-in-up">
-          <header className="mb-12">
+    <section className="article-page">
+      <div className="article-container">
+        <div className="article-inner">
+          <header className="article-header">
+            <p className="article-category">AI &amp; support</p>
             <h1 className="text-4xl sm:text-5xl font-bold tracking-tight mb-6">
               How AI is Transforming Technical Support: A 7-Year Perspective
             </h1>
-            <div className="flex flex-col sm:flex-row gap-4 text-sm text-foreground-muted mb-8">
+            <div className="article-meta">
               <span>Mar 15, 2026</span>
               <span>•</span>
               <span>8 min read</span>
@@ -25,7 +29,7 @@ export default function BlogPost() {
             </div>
           </header>
           
-          <div className="space-y-8">
+          <div className="article-body">
             <section className="mb-10">
               <h2 className="text-2xl font-bold mb-4">The Evolution of Support Engineering</h2>
               <p>
@@ -115,10 +119,10 @@ export default function BlogPost() {
             </section>
           </div>
           
-          <footer className="border-t pt-8 mt-12">
+          <footer className="article-footer">
             <p className="text-sm text-foreground-muted">
-              If you found this article valuable, consider <a href="/blog/slack-ai-skills" className="text-primary hover:underline">reading about our Slack AI skills implementation</a> 
-              or <a href="#contact" className="text-primary hover:underline">getting in touch</a> to discuss how these approaches could work for your organization.
+              If you found this article valuable, consider <Link href="/blog/slack-ai-skills" className="text-primary hover:underline">reading about our Slack AI skills implementation</Link>
+              or <Link href="/#contact" className="text-primary hover:underline">getting in touch</Link> to discuss how these approaches could work for your organization.
             </p>
           </footer>
         </div>

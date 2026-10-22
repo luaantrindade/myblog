@@ -126,7 +126,7 @@ export default function TechStack() {
             `}
           >
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3 md:gap-4">
-              {category.skills.map((skill, index) => (
+              {cat.skills.map((skill, index) => (
                 <div
                   key={skill.name}
                   className={`group relative bg-background/80 backdrop-blur-xl border border-white/10 rounded-xl p-4 md:p-5 flex flex-col items-center gap-3 transition-all duration-300 hover:scale-105 ${cat.borderColor}`}
