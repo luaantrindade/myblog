@@ -42,7 +42,11 @@ export const metadata: Metadata = {
     title: "Luan Trindade — Field notes on AI, support & systems",
     description: "Writing about practical AI, support engineering, automation, and building useful systems.",
   },
-  icons: { icon: "/favicon.ico" },
+  icons: {
+    icon: "/luan-logo.svg",
+    shortcut: "/luan-logo.svg",
+    apple: "/luan-logo.svg",
+  },
 };
 
 export const viewport: Viewport = {
