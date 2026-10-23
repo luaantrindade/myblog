@@ -116,8 +116,9 @@ export default function HomePage() {
             </p>
             <p>
               Today I work in technical support for cloud software and build
-              practical AI tools for the teams around me. This site is where I
-              share what I&apos;m learning along the way.
+              practical AI tools for the teams around me. I enjoy taking a
+              promising idea from prototype to something people can use—and
+              sharing what I learn along the way.
             </p>
             <Link href="/#experience" className="text-link">A few details about my work <span aria-hidden="true">↗</span></Link>
           </div>
@@ -144,6 +145,10 @@ export default function HomePage() {
             <span>support cases resolved</span>
             <strong>397</strong>
             <span>runs of an internal AI skill</span>
+            <div className="experience-recognition">
+              <span>2026 recognition</span>
+              <strong>Coupa Support Spotlight Award</strong>
+            </div>
           </div>
         </div>
       </section>

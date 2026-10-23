@@ -367,6 +367,9 @@ button { font: inherit; }
 .experience-metric { display: grid; grid-template-columns: 1fr; gap: 2px; padding-left: 23px; border-left: 1px solid var(--line); }
 .experience-metric strong { margin-top: 7px; font: 400 24px var(--serif); }
 .experience-metric span { color: var(--muted); font-size: 10px; }
+.experience-recognition { display: grid; gap: 3px; margin-top: 10px; padding-top: 12px; border-top: 1px solid var(--line); }
+.experience-recognition span { color: var(--muted); font-family: var(--mono); font-size: 9px; letter-spacing: 0.08em; text-transform: uppercase; }
+.experience-recognition strong { margin: 0; font: 400 16px/1.35 var(--serif); }
 
 .contact-section { padding-block: 33px 96px; }
 .contact-row { display: grid; grid-template-columns: 1fr 0.7fr; align-items: end; gap: 10%; padding-top: 21px; }
@@ -428,6 +431,7 @@ button { font: inherit; }
   .experience-metric { grid-column: 2; grid-template-columns: auto 1fr auto 1fr; align-items: baseline; gap: 5px 10px; padding: 14px 0 0; border: 0; border-top: 1px solid var(--line); }
   .experience-metric strong { margin-top: 0; }
   .experience-metric span { max-width: 90px; }
+  .experience-recognition { grid-column: 1 / -1; }
   .footer-inner { flex-wrap: wrap; padding-block: 23px; }
 }
 
