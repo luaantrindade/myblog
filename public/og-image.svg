@@ -22,39 +22,30 @@
       </feMerge>
     </filter>
   </defs>
-  
-  <!-- Background -->
+
   <rect width="1200" height="630" fill="url(#bg)"/>
-  
-  <!-- Subtle grid pattern -->
+
   <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
     <path d="M 60 0 L 0 0 0 60" fill="none" stroke="url(#accentGrad)" stroke-width="0.5" opacity="0.1"/>
   </pattern>
   <rect width="1200" height="630" fill="url(#grid)"/>
-  
-  <!-- Floating orbs -->
+
   <circle cx="150" cy="150" r="120" fill="url(#accentGrad)" opacity="0.08" filter="url(#glow)"/>
   <circle cx="1050" cy="480" r="180" fill="#a855f7" opacity="0.06" filter="url(#glow)"/>
   <circle cx="1100" cy="100" r="80" fill="#ec4899" opacity="0.05" filter="url(#glow)"/>
-  
-  <!-- Corner accents -->
+
   <path d="M 60 60 h 80 M 60 60 v 80" stroke="url(#accentGrad)" stroke-width="3" fill="none" opacity="0.4" stroke-linecap="round"/>
   <path d="M 1140 60 h -80 M 1140 60 v 80" stroke="url(#accentGrad)" stroke-width="3" fill="none" opacity="0.4" stroke-linecap="round"/>
   <path d="M 60 570 h 80 M 60 570 v -80" stroke="url(#accentGrad)" stroke-width="3" fill="none" opacity="0.4" stroke-linecap="round"/>
   <path d="M 1140 570 h -80 M 1140 570 v -80" stroke="url(#accentGrad)" stroke-width="3" fill="none" opacity="0.4" stroke-linecap="round"/>
-  
-  <!-- Main name -->
+
   <text x="600" y="260" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="96" font-weight="800" fill="url(#textGrad)" filter="url(#glow)">Luan</text>
-  
-  <!-- Subtitle -->
+
   <text x="600" y="355" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="28" font-weight="400" fill="#94a3b8" letter-spacing="4">Field Notes on AI, Support & Systems</text>
-  
-  <!-- Divider -->
+
   <line x1="450" y1="385" x2="750" y2="385" stroke="url(#accentGrad)" stroke-width="2" opacity="0.6"/>
-  
-  <!-- Tagline -->
-  <text x="600" y="430" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="20" font-weight="300" fill="#64748b">Based in Donabate, Ireland 🇮🇪</text>
-  
-  <!-- Bottom brand -->
+
+  <text x="600" y="430" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="20" font-weight="300" fill="#64748b">Based in Donabate, Ireland</text>
+
   <text x="600" y="540" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="16" font-weight="500" fill="#475569">luantrindade.com</text>
 </svg>

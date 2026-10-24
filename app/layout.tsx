@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     url: "/",
     images: [
       {
-        url: "/og-image.svg",
+        url: "/og-image.png",
         width: 1200,
         height: 630,
         alt: "Luan Trindade — Field notes on AI, support & systems",
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Luan Trindade — Field notes on AI, support & systems",
     description: "Writing about practical AI, support engineering, automation, and building useful systems.",
-    images: ["/og-image.svg"],
+    images: ["/og-image.png"],
   },
   icons: {
     icon: "/luan-logo.svg",
