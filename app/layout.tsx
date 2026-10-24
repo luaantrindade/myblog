@@ -36,11 +36,20 @@ export const metadata: Metadata = {
     title: "Luan Trindade — Field notes on AI, support & systems",
     description: "Writing about practical AI, support engineering, automation, and building useful systems.",
     url: "/",
+    images: [
+      {
+        url: "/luan-logo.svg",
+        width: 1200,
+        height: 630,
+        alt: "Luan Trindade — Field notes on AI, support & systems",
+      },
+    ],
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title: "Luan Trindade — Field notes on AI, support & systems",
     description: "Writing about practical AI, support engineering, automation, and building useful systems.",
+    images: ["/luan-logo.svg"],
   },
   icons: {
     icon: "/luan-logo.svg",
